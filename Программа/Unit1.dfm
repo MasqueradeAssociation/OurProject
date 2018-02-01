@@ -22,4 +22,12 @@ object MainForm: TMainForm
     TabOrder = 0
     OnClick = Button1Click
   end
+  object Dice: TButton
+    Left = 528
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Dice'
+    TabOrder = 1
+  end
 end
