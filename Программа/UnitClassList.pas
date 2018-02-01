@@ -80,8 +80,12 @@ type
     DopStatLevel:array [0..20] of Integer;//Уровни дополнительных характристик
     XP:array [0..30] of Integer;//ХП
     //Методы
+
+    procedure SaveList;
+    procedure OpenList;
     constructor Create;
     destructor Destroy;
+
   end;
 
 implementation
@@ -95,6 +99,144 @@ destructor TListPers.Destroy;
 begin
 
 end;
+
+procedure TListPers.SaveList();
+var f:Textfile;
+begin
+  AssignFile(f,'Character'+NameCharacter+'.txt');
+  Reset(f);
+  Writeln(f,NameCharacter);
+  Writeln(f,Owner);
+  Writeln(f,Nature);
+  Writeln(f,Mask);
+  Writeln(f,Chronicle);
+  Writeln(f,Concept);
+  Writeln(f,Home);
+  Writeln(f,Gen);
+  Writeln(f,Strength);
+  Writeln(f,Agility);
+  Writeln(f,Endurance);
+  Writeln(f,Charm);
+  Writeln(f,Manipulation);
+  Writeln(f,Appearance);
+  Writeln(f,Perception);
+  Writeln(f,Intelligence);
+  Writeln(f,Savvy);
+  Writeln(f,Athletics);
+  Writeln(f,Mindfulness);
+  Writeln(f,Intimidation);
+  Writeln(f,SleightOfHand);
+  Writeln(f,Leadership);
+  Writeln(f,Fight);
+  Writeln(f,Evasion);
+  Writeln(f,Cunning);
+  Writeln(f,Expression);
+  Writeln(f,Empathy);
+  Writeln(f,Driving);
+  Writeln(f,Trade);
+  Writeln(f,Survival);
+  Writeln(f,Performance);
+  Writeln(f,AnimalKen);
+  Writeln(f,Handicrafts);
+  Writeln(f,Stealth);
+  Writeln(f,Shooting);
+  Writeln(f,Fencing);
+  Writeln(f,Etiquette);
+  Writeln(f,Academy);
+  Writeln(f,Laws);
+  Writeln(f,Wisdom);
+  Writeln(f,Linguistics);
+  Writeln(f,Medicine);
+  Writeln(f,Theology);
+  Writeln(f,Occultism);
+  Writeln(f,Policy);
+  Writeln(f,Investigations);
+  Writeln(f,Seneschal);
+  Writeln(f,ConscientiousnessAndConviction);
+  Writeln(f,SelfmonitoringAndInstincts);
+  Writeln(f,Courage);
+  Writeln(f,HumanityAndPathName);
+  Writeln(f,HumanityAndPathLevel);
+  Writeln(f,WillpowerStatic);
+  Writeln(f,WillpowerDinamic);
+  Writeln(f,BloodPool);
+  //DisciplineName:array [0..20] of string;//Названия дисциплин
+  //DisciplineLevel:array [0..20] of Integer;//Уровень дисциплин
+  //AdditionsName:array [0..20] of string;//Названия дополнений
+  //AdditionsLevel:array [0..20] of Integer;//Уровень дополнений
+  //Virtues:array [0..20] of string;//Добродетели
+  //Vices:array [0..20] of string;//Пороки
+  //DopStatName:array [0..20] of string;//Названия дополнительных характристик
+  //DopStatLevel:array [0..20] of Integer;//Уровни дополнительных характристик
+  //XP:array [0..30] of Integer;
+  CloseFile(f);
+end;
+
+procedure TListPers.OpenList();
+var f:Textfile;
+begin
+  AssignFile(f,'Character'+NameCharacter+'.txt');
+  Reset(f);
+  Read(f,NameCharacter);
+  Read(f,Owner);
+  Read(f,Nature);
+  Read(f,Mask);
+  Read(f,Chronicle);
+  Read(f,Concept);
+  Read(f,Home);
+  Read(f,Gen);
+  Read(f,Strength);
+  Read(f,Agility);
+  Read(f,Endurance);
+  Read(f,Charm);
+  Read(f,Manipulation);
+  Read(f,Appearance);
+  Read(f,Perception);
+  Read(f,Intelligence);
+  Read(f,Savvy);
+  Read(f,Athletics);
+  Read(f,Mindfulness);
+  Read(f,Intimidation);
+  Read(f,SleightOfHand);
+  Read(f,Leadership);
+  Read(f,Fight);
+  Read(f,Evasion);
+  Read(f,Cunning);
+  Read(f,Expression);
+  Read(f,Empathy);
+  Read(f,Driving);
+  Read(f,Trade);
+  Read(f,Survival);
+  Read(f,Performance);
+  Read(f,AnimalKen);
+  Read(f,Handicrafts);
+  Read(f,Stealth);
+  Read(f,Shooting);
+  Read(f,Fencing);
+  Read(f,Etiquette);
+  Read(f,Academy);
+  Read(f,Laws);
+  Read(f,Wisdom);
+  Read(f,Linguistics);
+  Read(f,Medicine);
+  Read(f,Theology);
+  Read(f,Occultism);
+  Read(f,Policy);
+  Read(f,Investigations);
+  Read(f,Seneschal);
+  Read(f,ConscientiousnessAndConviction);
+  Read(f,SelfmonitoringAndInstincts);
+  Read(f,Courage);
+  Read(f,HumanityAndPathName);
+  Read(f,HumanityAndPathLevel);
+  Read(f,WillpowerStatic);
+  Read(f,WillpowerDinamic);
+  Read(f,BloodPool);
+  ///////
+  CloseFile(f);
+end;
+
+
 
 
 end.
