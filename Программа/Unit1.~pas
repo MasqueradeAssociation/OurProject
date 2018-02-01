@@ -27,7 +27,7 @@ uses ListForm;
 
 procedure TMainForm.Button1Click(Sender: TObject);
 begin
-  ListCharacter.Show();
+  ListForm.Show();
 end;
 
 end.
