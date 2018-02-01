@@ -19,6 +19,8 @@ var
 
 implementation
 
+uses UnitClassList;
+
 {$R *.dfm}
 
 end.
