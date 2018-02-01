@@ -59,6 +59,10 @@ type
     SavvyPointImg: TImage;
     SavvyMP: TImage;
     TitleAbilImg: TImage;
+    Image1: TImage;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;

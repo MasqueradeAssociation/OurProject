@@ -1,8 +1,9 @@
 object ListCharacter: TListCharacter
   Left = 189
   Top = 115
-  Width = 1507
+  Width = 1661
   Height = 873
+  VertScrollBar.Position = 234
   Caption = #1051#1080#1089#1090' '#1087#1077#1088#1089#1086#1085#1072#1078#1072
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -14,8 +15,8 @@ object ListCharacter: TListCharacter
   PixelsPerInch = 96
   TextHeight = 13
   object TitleImg: TImage
-    Left = 48
-    Top = 16
+    Left = 32
+    Top = -202
     Width = 1401
     Height = 153
     Picture.Data = {
@@ -1271,8 +1272,8 @@ object ListCharacter: TListCharacter
       FFD9}
   end
   object Label2: TLabel
-    Left = 56
-    Top = 232
+    Left = 40
+    Top = 14
     Width = 53
     Height = 24
     Caption = #1048#1075#1088#1086#1082
@@ -1284,8 +1285,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 56
-    Top = 272
+    Left = 40
+    Top = 54
     Width = 75
     Height = 24
     Caption = #1061#1088#1086#1085#1080#1082#1072
@@ -1297,8 +1298,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 56
-    Top = 192
+    Left = 40
+    Top = -26
     Width = 36
     Height = 24
     Caption = #1048#1084#1103
@@ -1310,8 +1311,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 504
-    Top = 232
+    Left = 488
+    Top = 14
     Width = 55
     Height = 24
     Caption = #1052#1072#1089#1082#1072
@@ -1323,8 +1324,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 504
-    Top = 272
+    Left = 488
+    Top = 54
     Width = 43
     Height = 24
     Caption = #1050#1083#1072#1085
@@ -1336,8 +1337,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 504
-    Top = 192
+    Left = 488
+    Top = -26
     Width = 63
     Height = 24
     Caption = #1053#1072#1090#1091#1088#1072
@@ -1349,8 +1350,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 984
-    Top = 232
+    Left = 968
+    Top = 14
     Width = 83
     Height = 24
     Caption = #1059#1073#1077#1078#1080#1097#1077
@@ -1362,8 +1363,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 984
-    Top = 272
+    Left = 968
+    Top = 54
     Width = 77
     Height = 24
     Caption = #1050#1086#1085#1094#1077#1087#1090
@@ -1375,8 +1376,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 984
-    Top = 192
+    Left = 968
+    Top = -26
     Width = 98
     Height = 24
     Caption = #1055#1086#1082#1086#1083#1077#1085#1080#1077
@@ -1388,8 +1389,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object TitleAtrImg: TImage
-    Left = 40
-    Top = 320
+    Left = 24
+    Top = 102
     Width = 1417
     Height = 105
     Picture.Data = {
@@ -1967,8 +1968,8 @@ object ListCharacter: TListCharacter
     Stretch = True
   end
   object Label10: TLabel
-    Left = 56
-    Top = 536
+    Left = 40
+    Top = 318
     Width = 85
     Height = 24
     Caption = #1051#1086#1074#1082#1086#1089#1090#1100
@@ -1980,8 +1981,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label11: TLabel
-    Left = 56
-    Top = 576
+    Left = 40
+    Top = 358
     Width = 131
     Height = 24
     Caption = #1042#1099#1085#1086#1089#1083#1080#1074#1086#1089#1090#1100
@@ -1993,8 +1994,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 56
-    Top = 496
+    Left = 40
+    Top = 278
     Width = 44
     Height = 24
     Caption = #1057#1080#1083#1072
@@ -2006,8 +2007,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label13: TLabel
-    Left = 200
-    Top = 448
+    Left = 184
+    Top = 230
     Width = 144
     Height = 33
     Caption = #1060#1080#1079#1080#1095#1077#1089#1082#1080#1077
@@ -2019,8 +2020,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label14: TLabel
-    Left = 664
-    Top = 448
+    Left = 648
+    Top = 230
     Width = 148
     Height = 29
     Caption = #1057#1086#1094#1080#1072#1083#1100#1085#1099#1077
@@ -2032,8 +2033,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label15: TLabel
-    Left = 1152
-    Top = 448
+    Left = 1136
+    Top = 230
     Width = 148
     Height = 29
     Caption = #1052#1077#1085#1090#1072#1083#1100#1085#1099#1077
@@ -2045,8 +2046,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label16: TLabel
-    Left = 536
-    Top = 536
+    Left = 520
+    Top = 318
     Width = 120
     Height = 24
     Caption = #1052#1072#1085#1080#1087#1091#1083#1103#1094#1080#1103
@@ -2058,8 +2059,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label17: TLabel
-    Left = 536
-    Top = 576
+    Left = 520
+    Top = 358
     Width = 101
     Height = 24
     Caption = #1042#1085#1077#1096#1085#1086#1089#1090#1100
@@ -2071,8 +2072,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label18: TLabel
-    Left = 536
-    Top = 496
+    Left = 520
+    Top = 278
     Width = 79
     Height = 24
     Caption = #1054#1073#1072#1103#1085#1080#1077
@@ -2084,8 +2085,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label19: TLabel
-    Left = 1016
-    Top = 536
+    Left = 1000
+    Top = 318
     Width = 95
     Height = 24
     Caption = #1048#1085#1090#1077#1083#1083#1077#1082#1090
@@ -2097,8 +2098,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label20: TLabel
-    Left = 1016
-    Top = 576
+    Left = 1000
+    Top = 358
     Width = 85
     Height = 24
     Caption = #1057#1084#1077#1082#1072#1083#1082#1072
@@ -2110,8 +2111,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object Label21: TLabel
-    Left = 1016
-    Top = 496
+    Left = 1000
+    Top = 278
     Width = 108
     Height = 24
     Caption = #1042#1086#1089#1087#1088#1080#1103#1090#1080#1077
@@ -2123,8 +2124,8 @@ object ListCharacter: TListCharacter
     ParentFont = False
   end
   object StrengthPointImg: TImage
-    Left = 200
-    Top = 488
+    Left = 184
+    Top = 270
     Width = 240
     Height = 38
     Picture.Data = {
@@ -2365,8 +2366,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object StrengthMP: TImage
-    Left = 440
-    Top = 488
+    Left = 424
+    Top = 270
     Width = 68
     Height = 34
     Picture.Data = {
@@ -3139,8 +3140,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = StrengthMPMouseDown
   end
   object AgilityPointImg: TImage
-    Left = 200
-    Top = 528
+    Left = 184
+    Top = 310
     Width = 240
     Height = 38
     Picture.Data = {
@@ -3381,8 +3382,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object AgilityMP: TImage
-    Left = 440
-    Top = 528
+    Left = 424
+    Top = 310
     Width = 68
     Height = 34
     Picture.Data = {
@@ -4155,8 +4156,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = AgilityMPMouseDown
   end
   object EndurancePointImg: TImage
-    Left = 200
-    Top = 568
+    Left = 184
+    Top = 350
     Width = 240
     Height = 38
     Picture.Data = {
@@ -4397,8 +4398,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object EnduranceMP: TImage
-    Left = 440
-    Top = 568
+    Left = 424
+    Top = 350
     Width = 68
     Height = 34
     Picture.Data = {
@@ -5171,8 +5172,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = EnduranceMPMouseDown
   end
   object CharmPointImg: TImage
-    Left = 672
-    Top = 488
+    Left = 656
+    Top = 270
     Width = 240
     Height = 38
     Picture.Data = {
@@ -5413,8 +5414,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object CharmMP: TImage
-    Left = 912
-    Top = 488
+    Left = 896
+    Top = 270
     Width = 68
     Height = 34
     Picture.Data = {
@@ -6187,8 +6188,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = CharmMPMouseDown
   end
   object ManipulationPointImg: TImage
-    Left = 672
-    Top = 528
+    Left = 656
+    Top = 310
     Width = 240
     Height = 38
     Picture.Data = {
@@ -6429,8 +6430,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object ManipulationMP: TImage
-    Left = 912
-    Top = 528
+    Left = 896
+    Top = 310
     Width = 68
     Height = 34
     Picture.Data = {
@@ -7203,8 +7204,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = ManipulationMPMouseDown
   end
   object AppearancePointImg: TImage
-    Left = 672
-    Top = 568
+    Left = 656
+    Top = 350
     Width = 240
     Height = 38
     Picture.Data = {
@@ -7445,8 +7446,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object AppearanceMP: TImage
-    Left = 912
-    Top = 568
+    Left = 896
+    Top = 350
     Width = 68
     Height = 34
     Picture.Data = {
@@ -8219,8 +8220,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = AppearanceMPMouseDown
   end
   object PerceptionPointImg: TImage
-    Left = 1128
-    Top = 488
+    Left = 1112
+    Top = 270
     Width = 240
     Height = 38
     Picture.Data = {
@@ -8461,8 +8462,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object PerceptionMP: TImage
-    Left = 1368
-    Top = 488
+    Left = 1352
+    Top = 270
     Width = 68
     Height = 34
     Picture.Data = {
@@ -9235,8 +9236,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = PerceptionMPMouseDown
   end
   object IntelligencePointImg: TImage
-    Left = 1128
-    Top = 528
+    Left = 1112
+    Top = 310
     Width = 240
     Height = 38
     Picture.Data = {
@@ -9477,8 +9478,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object IntelligenceMP: TImage
-    Left = 1368
-    Top = 528
+    Left = 1352
+    Top = 310
     Width = 68
     Height = 34
     Picture.Data = {
@@ -10251,8 +10252,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = IntelligenceMPMouseDown
   end
   object SavvyPointImg: TImage
-    Left = 1128
-    Top = 568
+    Left = 1112
+    Top = 350
     Width = 240
     Height = 38
     Picture.Data = {
@@ -10493,8 +10494,8 @@ object ListCharacter: TListCharacter
       4E046AF0827265006C5FF8034FFFD9}
   end
   object SavvyMP: TImage
-    Left = 1368
-    Top = 568
+    Left = 1352
+    Top = 350
     Width = 68
     Height = 34
     Picture.Data = {
@@ -11267,8 +11268,8 @@ object ListCharacter: TListCharacter
     OnMouseDown = SavvyMPMouseDown
   end
   object TitleAbilImg: TImage
-    Left = 40
-    Top = 632
+    Left = 24
+    Top = 414
     Width = 1417
     Height = 65
     Picture.Data = {
@@ -12072,9 +12073,54 @@ object ListCharacter: TListCharacter
       405100550402FC419C0AB1AD0D0E9252BA35742B63A14C09AD4D115574A86D6E
       13249A0D6595602676741A55B751DE4BD5FF00EB14FFD9}
   end
+  object Image1: TImage
+    Left = 1488
+    Top = -114
+    Width = 105
+    Height = 3000
+  end
+  object Label22: TLabel
+    Left = 40
+    Top = 566
+    Width = 85
+    Height = 24
+    Caption = #1051#1086#1074#1082#1086#1089#1090#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label23: TLabel
+    Left = 40
+    Top = 606
+    Width = 131
+    Height = 24
+    Caption = #1042#1099#1085#1086#1089#1083#1080#1074#1086#1089#1090#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label24: TLabel
+    Left = 40
+    Top = 526
+    Width = 44
+    Height = 24
+    Caption = #1057#1080#1083#1072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
   object NameEdit: TEdit
-    Left = 112
-    Top = 192
+    Left = 96
+    Top = -26
     Width = 353
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12086,8 +12132,8 @@ object ListCharacter: TListCharacter
     TabOrder = 0
   end
   object Edit1: TEdit
-    Left = 128
-    Top = 232
+    Left = 112
+    Top = 14
     Width = 337
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12099,8 +12145,8 @@ object ListCharacter: TListCharacter
     TabOrder = 1
   end
   object Edit2: TEdit
-    Left = 152
-    Top = 272
+    Left = 136
+    Top = 54
     Width = 313
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12112,8 +12158,8 @@ object ListCharacter: TListCharacter
     TabOrder = 2
   end
   object Edit3: TEdit
-    Left = 584
-    Top = 192
+    Left = 568
+    Top = -26
     Width = 361
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12125,8 +12171,8 @@ object ListCharacter: TListCharacter
     TabOrder = 3
   end
   object Edit4: TEdit
-    Left = 576
-    Top = 232
+    Left = 560
+    Top = 14
     Width = 369
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12138,8 +12184,8 @@ object ListCharacter: TListCharacter
     TabOrder = 4
   end
   object Edit5: TEdit
-    Left = 568
-    Top = 272
+    Left = 552
+    Top = 54
     Width = 377
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12151,8 +12197,8 @@ object ListCharacter: TListCharacter
     TabOrder = 5
   end
   object Edit6: TEdit
-    Left = 1104
-    Top = 192
+    Left = 1088
+    Top = -26
     Width = 337
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12164,8 +12210,8 @@ object ListCharacter: TListCharacter
     TabOrder = 6
   end
   object Edit7: TEdit
-    Left = 1088
-    Top = 232
+    Left = 1072
+    Top = 14
     Width = 353
     Height = 28
     Font.Charset = DEFAULT_CHARSET
@@ -12177,8 +12223,8 @@ object ListCharacter: TListCharacter
     TabOrder = 7
   end
   object Edit8: TEdit
-    Left = 1080
-    Top = 272
+    Left = 1064
+    Top = 54
     Width = 361
     Height = 28
     Font.Charset = DEFAULT_CHARSET
