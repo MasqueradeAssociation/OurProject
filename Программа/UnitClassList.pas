@@ -102,6 +102,7 @@ end;
 
 procedure TListPers.SaveList();
 var f:Textfile;
+    i:integer;
 begin
   AssignFile(f,'Character'+NameCharacter+'.txt');
   Reset(f);
@@ -160,20 +161,30 @@ begin
   Writeln(f,WillpowerStatic);
   Writeln(f,WillpowerDinamic);
   Writeln(f,BloodPool);
-  //DisciplineName:array [0..20] of string;//Названия дисциплин
-  //DisciplineLevel:array [0..20] of Integer;//Уровень дисциплин
-  //AdditionsName:array [0..20] of string;//Названия дополнений
-  //AdditionsLevel:array [0..20] of Integer;//Уровень дополнений
-  //Virtues:array [0..20] of string;//Добродетели
-  //Vices:array [0..20] of string;//Пороки
-  //DopStatName:array [0..20] of string;//Названия дополнительных характристик
-  //DopStatLevel:array [0..20] of Integer;//Уровни дополнительных характристик
-  //XP:array [0..30] of Integer;
+  for i:=0 to 20 do
+    Writeln(f,DisciplineName[i]);
+  for i:=0 to 20 do
+    Writeln(f,DisciplineLevel[i]);
+  for i:=0 to 20 do
+    Writeln(f,AdditionsName[i]);
+  for i:=0 to 20 do
+    Writeln(f,AdditionsLevel[i]);
+  for i:=0 to 20 do
+    Writeln(f,Virtues[i]);
+  for i:=0 to 20 do
+    Writeln(f,Vices[i]);
+  for i:=0 to 20 do
+    Writeln(f,DopStatName[i]);
+  for i:=0 to 20 do
+    Writeln(f,DopStatLevel[i]);
+  for i:=0 to 30 do
+    Writeln(f,XP[i]);
   CloseFile(f);
 end;
 
 procedure TListPers.OpenList();
 var f:Textfile;
+    i:Integer;
 begin
   AssignFile(f,'Character'+NameCharacter+'.txt');
   Reset(f);
@@ -232,7 +243,24 @@ begin
   Read(f,WillpowerStatic);
   Read(f,WillpowerDinamic);
   Read(f,BloodPool);
-  ///////
+  for i:=0 to 20 do
+    Read(f,DisciplineName[i]);
+  for i:=0 to 20 do
+    Read(f,DisciplineLevel[i]);
+  for i:=0 to 20 do
+    Read(f,AdditionsName[i]);
+  for i:=0 to 20 do
+    Read(f,AdditionsLevel[i]);
+  for i:=0 to 20 do
+    Read(f,Virtues[i]);
+  for i:=0 to 20 do
+    Read(f,Vices[i]);
+  for i:=0 to 20 do
+    Read(f,DopStatName[i]);
+  for i:=0 to 20 do
+    Read(f,DopStatLevel[i]);
+  for i:=0 to 30 do
+    Read(f,XP[i]);
   CloseFile(f);
 end;
 

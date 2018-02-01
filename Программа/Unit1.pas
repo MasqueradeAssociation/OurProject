@@ -23,7 +23,7 @@ var
 
 implementation
 
-uses ListForm;
+uses ListForm, UnitDice;
 
 {$R *.dfm}
 
