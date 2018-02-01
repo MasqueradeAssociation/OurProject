@@ -9,10 +9,40 @@ uses
 type
   TListCharacter = class(TForm)
     ListImage: TImage;
-    StrMP: TImage;
+    StrengthMP: TImage;
+    AgilityMP: TImage;
+    Image1: TImage;
+    EnduranceMP: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
+    Image10: TImage;
+    Image11: TImage;
+    Image12: TImage;
+    Image13: TImage;
+    Image14: TImage;
+    Image15: TImage;
+    Image16: TImage;
+    Image17: TImage;
+    Image18: TImage;
+    Image19: TImage;
+    Image20: TImage;
+    Image21: TImage;
+    Image22: TImage;
+    Image23: TImage;
+    Image24: TImage;
+    Image25: TImage;
+    Image26: TImage;
     procedure ListImageMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
-    procedure StrMPMouseDown(Sender: TObject; Button: TMouseButton;
+    procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
@@ -37,16 +67,29 @@ begin
   ListCharacter.Caption:='X='+inttostr(X)+'  Y='+inttostr(Y);
 end;
 
-procedure TListCharacter.StrMPMouseDown(Sender: TObject;
+procedure TListCharacter.StrengthMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   if(X <15) then
   begin
-    ShowMessage('-');
+    ShowMessage('s-');
   end
   else
   begin
-    ShowMessage('+');
+    ShowMessage('s+');
+  end;
+end;
+
+procedure TListCharacter.AgilityMPMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  if(X <15) then
+  begin
+    ShowMessage('a-');
+  end
+  else
+  begin
+    ShowMessage('a+');
   end;
 end;
 
