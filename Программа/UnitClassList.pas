@@ -5,10 +5,8 @@ interface
 uses classes, Sysutils;
 
 type
-  TList = class
+  TListPers = class
   public
-    //constructor Create;
-
     ////Основнвя информация
     NameCharacter:string;//Имя
     Owner:string;//Игрок
@@ -47,21 +45,21 @@ type
     Performance:Integer;//Исполнение
     AnimalKen:Integer;//Знание Животных
     Handicrafts:Integer;//Ремёсла
-    Evasion:Integer;//Уклонение
-    Cunning:Integer;//Хитрость
-    Expression:Integer;//Экспрессия
-    Empathy:Integer;//Эмпатия
+    Stealth:Integer;//Скрытность
+    Shooting:Integer;//Стрельба
+    Fencing:Integer;//Фехтование
+    Etiquette:Integer;//Этикет
     //Познания
-    Athletics:Integer;//Атлетика
-    Mindfulness:Integer;//Внимательность
-    Intimidation:Integer;//Запугивание
-    SleightOfHand:Integer;//Ловкость рук
-    Leadership:Integer;//Лидерство
-    Fight:Integer;//Рукопашный бой
-    Evasion:Integer;//Уклонение
-    Cunning:Integer;//Хитрость
-    Expression:Integer;//Экспрессия
-    Empathy:Integer;//Эмпатия
+    Academy:Integer;//Академические
+    Laws:Integer;//Законы
+    Wisdom:Integer;//Мудрость
+    Linguistics:Integer;//Лингвистика
+    Medicine:Integer;//Медицина
+    Theology:Integer;//Теология
+    Occultism:Integer;//Оккультизм
+    Policy:Integer;//Политика
+    Investigations:Integer;//Расследования
+    Seneschal:Integer;//Сенешаль
     ////Преимущества
     DisciplineName:array [0..20] of string;//Названия дисциплин
     DisciplineLevel:array [0..20] of Integer;//Уровень дисциплин
@@ -81,10 +79,22 @@ type
     DopStatName:array [0..20] of string;//Названия дополнительных характристик
     DopStatLevel:array [0..20] of Integer;//Уровни дополнительных характристик
     XP:array [0..30] of Integer;//ХП
+    //Методы
+    constructor Create;
+    destructor Destroy;
   end;
 
 implementation
 
-//
+constructor TListPers.Create;
+begin
+
+end;
+
+destructor TListPers.Destroy;
+begin
+
+end;
+
 
 end.
