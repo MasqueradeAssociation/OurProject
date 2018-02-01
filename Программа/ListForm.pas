@@ -21,6 +21,8 @@ implementation
 
 uses UnitClassList;
 
+//testcomment
+
 {$R *.dfm}
 
 end.
