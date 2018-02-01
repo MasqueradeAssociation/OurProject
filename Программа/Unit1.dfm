@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 423
-  Top = 259
+  Left = 417
+  Top = 276
   Width = 1305
   Height = 675
   Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -23,11 +23,12 @@ object MainForm: TMainForm
     OnClick = Button1Click
   end
   object Dice: TButton
-    Left = 528
-    Top = 176
+    Left = 600
+    Top = 184
     Width = 75
     Height = 25
     Caption = 'Dice'
     TabOrder = 1
+    OnClick = DiceClick
   end
 end

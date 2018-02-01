@@ -11,6 +11,7 @@ type
     Button1: TButton;
     Dice: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure DiceClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +30,11 @@ uses ListForm;
 procedure TMainForm.Button1Click(Sender: TObject);
 begin
   ListCharacter.Show();
+end;
+
+procedure TMainForm.DiceClick(Sender: TObject);
+begin
+  DiceForm.Show();
 end;
 
 end.
