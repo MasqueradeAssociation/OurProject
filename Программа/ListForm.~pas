@@ -567,21 +567,50 @@ begin
   end
   else
   begin
-    if (param <>8 ) then param:=param+1;
+    if (param <>10 ) then param:=param+1;
   end;
 
   case param of
-  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells0.jpg');
-  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells1.jpg');
-  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells2.jpg');
-  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells3.jpg');
-  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells4.jpg');
-  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells5.jpg');
-  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells6.jpg');
-  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells7.jpg');
-  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells8.jpg');
+  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells1.jpg');
+  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells2.jpg');
+  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells3.jpg');
+  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells4.jpg');
+  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells5.jpg');
+  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells6.jpg');
+  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells7.jpg');
+  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells8.jpg');
+  9: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells9.jpg');
+  10: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
   end;
 end;
+
+procedure SetPoints3(img: TImage; var param, mode: Integer);
+begin
+  if (mode<34) then
+  begin
+    if (param <>0 ) then param:=param-1;
+  end
+  else
+  begin
+    if (param <>10 ) then param:=param+1;
+  end;
+
+  case param of
+  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points0.jpg');
+  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points1.jpg');
+  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points2.jpg');
+  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points3.jpg');
+  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points4.jpg');
+  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points5.jpg');
+  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points6.jpg');
+  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points7.jpg');
+  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points8.jpg');
+  9: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points9.jpg');
+  10: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points10.jpg');
+  end;
+end;
+
 
 procedure SetBloodPool(var param, mode: Integer; b1,b2,b3,b4,b5: TImage);
 var
@@ -619,7 +648,7 @@ begin
   if (d = 4) then b5.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
 end;
 
-procedure SetHealthPoit(param: Integer; h1,h2,h3: TImage);
+procedure SetHealthPoint(param: Integer; h1,h2,h3: TImage);
 var
   d, e: Integer;
 begin
@@ -674,6 +703,8 @@ begin
 end;
 
 procedure SetList(list: TListCharacter; data: TListPers);
+var
+  dmgcells: array[0..29] of TImage;
 begin
 
 
@@ -781,10 +812,81 @@ begin
   list.DisciplineName9.Text:=data.DisciplineName[8];
   list.DisciplineName10.Text:=data.DisciplineName[9];
 
-  //Добродетели
+  //Преимущества.Добродетели
   list.ConscientiousnessAndConvictionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.ConscientiousnessAndConviction)+'.jpg');
   list.SelfmonitoringAndInstinctsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.SelfmonitoringAndInstincts)+'.jpg');
   list.CouragePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.Courage)+'.jpg');
+
+  //Остальное. Пороки/Добродетели
+  list.VirtuesAndVices1.Text:=data.VirtuesAndVices[0];
+  list.VirtuesAndVices2.Text:=data.VirtuesAndVices[1];
+  list.VirtuesAndVices3.Text:=data.VirtuesAndVices[2];
+  list.VirtuesAndVices4.Text:=data.VirtuesAndVices[3];
+  list.VirtuesAndVices5.Text:=data.VirtuesAndVices[4];
+  list.VirtuesAndVices6.Text:=data.VirtuesAndVices[5];
+  list.VirtuesAndVices7.Text:=data.VirtuesAndVices[6];
+  list.VirtuesAndVices8.Text:=data.VirtuesAndVices[7];
+  list.VirtuesAndVices9.Text:=data.VirtuesAndVices[8];
+
+  //Остальное. Человечность/Путь
+  list.HumanityAndPathNameEdit.Text:=data.HumanityAndPathName;
+  list.HumanityAndPathLevelPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(data.HumanityAndPathLevel)+'.jpg');
+
+  //Остальное.Сила Воли
+  list.WillpowerStaticPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(data.WillpowerStatic)+'.jpg');
+  list.WillpowerDinamicPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(data.WillpowerDinamic)+'.jpg');
+
+  //Остальное.Дополнительные характеристики.Названия
+  list.DopStatName1.Text:=data.DopStatName[0];
+  list.DopStatName2.Text:=data.DopStatName[1];
+  list.DopStatName3.Text:=data.DopStatName[2];
+  list.DopStatName4.Text:=data.DopStatName[3];
+
+  //Остальное.Дополнительные характеристики.Уровни
+  list.DopStatLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[0])+'.jpg');
+  list.DopStatLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[1])+'.jpg');
+  list.DopStatLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[2])+'.jpg');
+  list.DopStatLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[3])+'.jpg');
+
+
+  //Остальное.Здоровье
+
+
+
+  dmgcells[0] := list.dc1;
+	dmgcells[1] := list.dc2;
+	dmgcells[2] := list.dc3;
+	dmgcells[3] := list.dc4;
+	dmgcells[4] := list.dc5;
+	dmgcells[5] := list.dc6;
+	dmgcells[6] := list.dc7;
+	dmgcells[7] := list.dc8;
+	dmgcells[8] := list.dc9;
+	dmgcells[9] := list.dc10;
+	dmgcells[10] := list.dc11;
+	dmgcells[11] := list.dc12;
+	dmgcells[12] := list.dc13;
+	dmgcells[13] := list.dc14;
+	dmgcells[14] := list.dc15;
+	dmgcells[15] := list.dc16;
+	dmgcells[16] := list.dc17;
+	dmgcells[17] := list.dc18;
+	dmgcells[18] := list.dc19;
+	dmgcells[19] := list.dc20;
+	dmgcells[20] := list.dc21;
+	dmgcells[21] := list.dc22;
+	dmgcells[22] := list.dc23;
+	dmgcells[23] := list.dc24;
+	dmgcells[24] := list.dc25;
+	dmgcells[25] := list.dc26;
+	dmgcells[26] := list.dc27;
+	dmgcells[27] := list.dc28;
+	dmgcells[28] := list.dc29;
+	dmgcells[29] := list.dc30;
+
+
+  SetHealthPoint(data.CalcHP(data.Endurance), list.hp1,list.hp2,list.hp3);
+  SetDamageCells(data.XP,dmgcells);
 
 
 
@@ -814,6 +916,8 @@ procedure TListCharacter.EnduranceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   SetPoints(EndurancePointImg, listchar.Endurance, X);
+  listchar.CalcHP(listchar.Endurance);
+  SetHealthPoint(listchar.CalcHP(listchar.Endurance), hp1,hp2,hp3);
 end;
 
 procedure TListCharacter.CharmMPMouseDown(Sender: TObject;
@@ -1035,7 +1139,7 @@ end;
 procedure TListCharacter.HumanityAndPathLevelMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(HumanityAndPathLevelPointImg,listchar.HumanityAndPathLevel,X);
+  SetPoints3(HumanityAndPathLevelPointImg,listchar.HumanityAndPathLevel,X);
 end;
 
 procedure TListCharacter.DopStatLevel1MPMouseDown(Sender: TObject;
@@ -1097,7 +1201,7 @@ end;
 procedure TListCharacter.WillpowerStaticMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(WillpowerStaticPointImg,listchar.WillpowerStatic,X);
+  SetPoints3(WillpowerStaticPointImg,listchar.WillpowerStatic,X);
 end;
 
 procedure TListCharacter.AdditionsLevel1MPMouseDown(Sender: TObject;
@@ -1410,9 +1514,6 @@ end;
  //
 
 procedure TListCharacter.FormCreate(Sender: TObject);
-var
- xp: array[0..29] of Integer;
- dmgcells: array[0..29] of TImage;
 begin
 //
 
@@ -1420,73 +1521,7 @@ begin
 
   SetList(ListCharacter, listchar);
 
-  SetHealthPoit(27, hp1,hp2,hp3);
 
-
-
-	xp[0] := 3;
-	xp[1] := 3;
-	xp[2] := 3;
-	xp[3] := 3;
-	xp[4] := 2;
-	xp[5] := 2;
-	xp[6] := 2;
-	xp[7] := 2;
-	xp[8] := 1;
-	xp[9] := 1;
-	xp[10] := 1;
-	xp[11] := 0;
-	xp[12] := 0;
-	xp[13] := 0;
-	xp[14] := 0;
-	xp[15] := 0;
-	xp[16] := 0;
-	xp[17] := 0;
-	xp[18] := 0;
-	xp[19] := 0;
-	xp[20] := 0;
-	xp[21] := 0;
-	xp[22] := 0;
-	xp[23] := 0;
-	xp[24] := 0;
-	xp[25] := 0;
-	xp[26] := 0;
-	xp[27] := 0;
-	xp[28] := 0;
-	xp[29] := 0;
-
-  dmgcells[0] := dc1;
-	dmgcells[1] := dc2;
-	dmgcells[2] := dc3;
-	dmgcells[3] := dc4;
-	dmgcells[4] := dc5;
-	dmgcells[5] := dc6;
-	dmgcells[6] := dc7;
-	dmgcells[7] := dc8;
-	dmgcells[8] := dc9;
-	dmgcells[9] := dc10;
-	dmgcells[10] := dc11;
-	dmgcells[11] := dc12;
-	dmgcells[12] := dc13;
-	dmgcells[13] := dc14;
-	dmgcells[14] := dc15;
-	dmgcells[15] := dc16;
-	dmgcells[16] := dc17;
-	dmgcells[17] := dc18;
-	dmgcells[18] := dc19;
-	dmgcells[19] := dc20;
-	dmgcells[20] := dc21;
-	dmgcells[21] := dc22;
-	dmgcells[22] := dc23;
-	dmgcells[23] := dc24;
-	dmgcells[24] := dc25;
-	dmgcells[25] := dc26;
-	dmgcells[26] := dc27;
-	dmgcells[27] := dc28;
-	dmgcells[28] := dc29;
-	dmgcells[29] := dc30;
-
-  SetDamageCells(listchar.XP,dmgcells);
 
 
 

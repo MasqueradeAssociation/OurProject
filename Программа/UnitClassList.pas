@@ -85,6 +85,7 @@ type
     procedure OpenList;
     constructor Create;
     destructor Destroy;
+    function CalcHP(value: Integer): Integer;
 
   end;
 
@@ -170,6 +171,11 @@ end;
 destructor TListPers.Destroy;
 begin
 
+end;
+
+function TListPers.CalcHP(value: Integer): Integer;
+begin
+  result:= value + 10;
 end;
 
 procedure TListPers.SaveList();
@@ -333,6 +339,9 @@ begin
     Read(f,XP[i]);
   CloseFile(f);
 end;
+
+
+
 
 
 
