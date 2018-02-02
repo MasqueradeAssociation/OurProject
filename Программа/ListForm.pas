@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, UnitClassList;
 
 type
   TListCharacter = class(TForm)
@@ -526,8 +526,6 @@ type
 var
   ListCharacter: TListCharacter;
 implementation
-
-uses UnitClassList;
 
 
 
