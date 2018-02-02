@@ -581,7 +581,7 @@ begin
   end;
 end;
 
-procedure SetBloodPool(param, mode: Integer; b1,b2,b3,b4,b5: TImage);
+procedure SetBloodPool(var param, mode: Integer; b1,b2,b3,b4,b5: TImage);
 var
   d, e: Integer;
 begin
@@ -1091,7 +1091,7 @@ end;
 procedure TListCharacter.BloodPoolMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetBloodPool(35, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
+  SetBloodPool(listchar.BloodPool, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
 end;
 
 
