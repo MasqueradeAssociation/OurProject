@@ -74,8 +74,7 @@ type
     WillpowerStatic:Integer;//Постоянная Сила воли
     WillpowerDinamic:Integer;//Временная Сила воли
     BloodPool:Integer;//Запас крови
-    Virtues:array [0..20] of string;//Добродетели
-    Vices:array [0..20] of string;//Пороки
+    VirtuesAndVices:array [0..20] of string;//Добродетели и Пороки
     DopStatName:array [0..20] of string;//Названия дополнительных характристик
     DopStatLevel:array [0..20] of Integer;//Уровни дополнительных характристик
     XP:array [0..30] of Integer;//ХП
@@ -157,9 +156,7 @@ begin
   for i:=0 to 20 do
     AdditionsLevel[i]:=0;
   for i:=0 to 20 do
-    Virtues[i]:='';
-  for i:=0 to 20 do
-    Vices[i]:='';
+    VirtuesAndVices[i]:='';
   for i:=0 to 20 do
     DopStatName[i]:='';
   for i:=0 to 20 do
@@ -243,9 +240,7 @@ begin
   for i:=0 to 20 do
     Writeln(f,AdditionsLevel[i]);
   for i:=0 to 20 do
-    Writeln(f,Virtues[i]);
-  for i:=0 to 20 do
-    Writeln(f,Vices[i]);
+    Writeln(f,VirtuesAndVices[i]);
   for i:=0 to 20 do
     Writeln(f,DopStatName[i]);
   for i:=0 to 20 do
@@ -325,9 +320,7 @@ begin
   for i:=0 to 20 do
     Read(f,AdditionsLevel[i]);
   for i:=0 to 20 do
-    Read(f,Virtues[i]);
-  for i:=0 to 20 do
-    Read(f,Vices[i]);
+    Read(f,VirtuesAndVices[i]);
   for i:=0 to 20 do
     Read(f,DopStatName[i]);
   for i:=0 to 20 do
