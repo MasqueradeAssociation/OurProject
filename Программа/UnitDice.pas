@@ -32,6 +32,7 @@ procedure TDiceForm.RollClick(Sender: TObject);
 var i,k,d:Integer;
 begin
   Randomize;
+  Result.Text:='';
   k:=0;
   for i:=0 to kountdice.ItemIndex do
     begin

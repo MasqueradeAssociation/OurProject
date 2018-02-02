@@ -82,7 +82,7 @@ type
     //Ìועמהû
 
     procedure SaveList;
-    procedure OpenList;
+    procedure OpenList(NameCh:string);
     constructor Create;
     destructor Destroy;
     function CalcHP(value: Integer): Integer;
@@ -182,8 +182,8 @@ procedure TListPers.SaveList();
 var f:Textfile;
     i:integer;
 begin
-  AssignFile(f,'Character'+NameCharacter+'.txt');
-  Reset(f);
+  AssignFile(f,NameCharacter+'.WodCh');// ExtractFilePath(Application.ExeName)+'\Character\'+
+  Rewrite(f);
   Writeln(f,NameCharacter);
   Writeln(f,Owner);
   Writeln(f,Nature);
@@ -235,7 +235,7 @@ begin
   Writeln(f,ConscientiousnessAndConviction);
   Writeln(f,SelfmonitoringAndInstincts);
   Writeln(f,Courage);
-  Writeln(f,HumanityAndPathName);
+  //Writeln(f,HumanityAndPathName);
   Writeln(f,HumanityAndPathLevel);
   Writeln(f,WillpowerStatic);
   Writeln(f,WillpowerDinamic);
@@ -259,11 +259,11 @@ begin
   CloseFile(f);
 end;
 
-procedure TListPers.OpenList();
+procedure TListPers.OpenList(NameCh:string);
 var f:Textfile;
     i:Integer;
 begin
-  AssignFile(f,'Character'+NameCharacter+'.txt');
+  AssignFile(f,NameCh);//'Character'+NameCh+
   Reset(f);
   Read(f,NameCharacter);
   Read(f,Owner);
@@ -316,7 +316,7 @@ begin
   Read(f,ConscientiousnessAndConviction);
   Read(f,SelfmonitoringAndInstincts);
   Read(f,Courage);
-  Read(f,HumanityAndPathName);
+  //Read(f,HumanityAndPathName);
   Read(f,HumanityAndPathLevel);
   Read(f,WillpowerStatic);
   Read(f,WillpowerDinamic);

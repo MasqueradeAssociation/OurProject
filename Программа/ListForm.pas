@@ -59,7 +59,6 @@ type
     SavvyPointImg: TImage;
     SavvyMP: TImage;
     TitleAbilImg: TImage;
-    Image1: TImage;
     Label22: TLabel;
     Label23: TLabel;
     Label24: TLabel;
@@ -316,6 +315,12 @@ type
     dc28: TImage;
     dc29: TImage;
     dc30: TImage;
+    img1: TImage;
+    img2: TImage;
+    LoadPers: TButton;
+    SavePers: TButton;
+    OpenChar: TOpenDialog;
+    NewPers1: TButton;
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;
@@ -516,6 +521,8 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure dc30MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure SavePersClick(Sender: TObject);
+    procedure LoadPersClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -1515,20 +1522,25 @@ end;
 
 procedure TListCharacter.FormCreate(Sender: TObject);
 begin
-//
-
   listchar := TListPers.Create;
 
   SetList(ListCharacter, listchar);
-
-
-
-
-
 
 end;
 
 
 
+
+procedure TListCharacter.SavePersClick(Sender: TObject);
+begin
+  listchar.SaveList;
+end;
+
+procedure TListCharacter.LoadPersClick(Sender: TObject);
+begin
+  if OpenChar.Execute then
+      listchar.OpenList(OpenChar.FileName);
+  SetList(ListCharacter, listchar);
+end;
 
 end.
