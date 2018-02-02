@@ -284,11 +284,38 @@ type
     BloodPool3: TImage;
     BloodPool4: TImage;
     BloodPool5: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
+    dc1: TImage;
     hp2: TImage;
     hp3: TImage;
+    dc2: TImage;
+    dc3: TImage;
+    dc4: TImage;
+    dc5: TImage;
+    dc6: TImage;
+    dc7: TImage;
+    dc8: TImage;
+    dc9: TImage;
+    dc10: TImage;
+    dc11: TImage;
+    dc12: TImage;
+    dc13: TImage;
+    dc14: TImage;
+    dc15: TImage;
+    dc16: TImage;
+    dc17: TImage;
+    dc18: TImage;
+    dc19: TImage;
+    dc20: TImage;
+    dc21: TImage;
+    dc22: TImage;
+    dc23: TImage;
+    dc24: TImage;
+    dc25: TImage;
+    dc26: TImage;
+    dc27: TImage;
+    dc28: TImage;
+    dc29: TImage;
+    dc30: TImage;
     //procedure SetPoints(img: TImage; param, mode: Integer);
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -430,6 +457,66 @@ type
     procedure BloodPoolMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormCreate(Sender: TObject);
+    procedure dc1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc3MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc4MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc5MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc6MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc7MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc8MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc9MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc10MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc11MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc12MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc13MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc14MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc15MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc16MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc17MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc18MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc19MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc20MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc21MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc22MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc23MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc24MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc25MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc26MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc27MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc28MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc29MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure dc30MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -438,10 +525,11 @@ type
 
 var
   ListCharacter: TListCharacter;
-
 implementation
 
 uses UnitClassList;
+
+
 
 
 
@@ -551,6 +639,31 @@ begin
   if (d = 0) then h1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
   if (d = 1) then h2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
   if (d = 2) then h3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
+end;
+
+
+procedure SetDamageCell(param: Integer; c: TImage);
+begin
+  param := param + 1;
+  if (param = 4) then param := 0;
+
+  case param of
+  0: c.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell0.jpg');
+  1: c.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell1.jpg');
+  2: c.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell2.jpg');
+  3: c.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell3.jpg');
+  end;
+end;
+
+procedure SetDamageCells(dmg: Array of Integer; dmgc: Array of TImage);
+var
+  i: Integer;
+begin
+  For i:=0 to 29 do
+  begin
+    SetDamageCell(dmg[i]-1,dmgc[i]);
+  end;
+
 end;
 
 
@@ -982,10 +1095,273 @@ begin
   SetBloodPool(1, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
 end;
 
+
+
+procedure TListCharacter.dc1MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc1);
+end;
+
+procedure TListCharacter.dc2MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc2);
+end;
+
+procedure TListCharacter.dc3MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc3);
+end;
+
+procedure TListCharacter.dc4MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc4);
+end;
+
+procedure TListCharacter.dc5MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc5);
+end;
+
+procedure TListCharacter.dc6MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc6);
+end;
+
+procedure TListCharacter.dc7MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc7);
+end;
+
+procedure TListCharacter.dc8MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc8);
+end;
+
+procedure TListCharacter.dc9MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc9);
+end;
+
+procedure TListCharacter.dc10MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc10);
+end;
+
+procedure TListCharacter.dc11MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc11);
+end;
+
+procedure TListCharacter.dc12MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc12);
+end;
+
+procedure TListCharacter.dc13MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc13);
+end;
+
+procedure TListCharacter.dc14MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc14);
+end;
+
+procedure TListCharacter.dc15MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc15);
+end;
+
+procedure TListCharacter.dc16MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc16);
+end;
+
+procedure TListCharacter.dc17MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc17);
+end;
+
+procedure TListCharacter.dc18MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc18);
+end;
+
+procedure TListCharacter.dc19MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc19);
+end;
+
+procedure TListCharacter.dc20MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc20);
+end;
+
+procedure TListCharacter.dc21MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc21);
+end;
+
+procedure TListCharacter.dc22MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc22);
+end;
+
+procedure TListCharacter.dc23MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc23);
+end;
+
+procedure TListCharacter.dc24MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc24);
+end;
+
+procedure TListCharacter.dc25MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc25);
+end;
+
+procedure TListCharacter.dc26MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc26);
+end;
+
+procedure TListCharacter.dc27MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc27);
+end;
+
+procedure TListCharacter.dc28MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc28);
+end;
+
+procedure TListCharacter.dc29MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc29);
+end;
+
+procedure TListCharacter.dc30MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetDamageCell(3, dc30);
+end;
+
+
+
+
+ //
+  //Создание формы
+ //
+
 procedure TListCharacter.FormCreate(Sender: TObject);
+var
+ xp: array[0..29] of Integer;
+ dmgcells: array[0..29] of TImage;
 begin
 //
   SetHealthPoit(27, hp1,hp2,hp3);
+
+	xp[0] := 0;
+	xp[1] := 0;
+	xp[2] := 0;
+	xp[3] := 0;
+	xp[4] := 0;
+	xp[5] := 0;
+	xp[6] := 0;
+	xp[7] := 0;
+	xp[8] := 0;
+	xp[9] := 0;
+	xp[10] := 0;
+	xp[11] := 0;
+	xp[12] := 0;
+	xp[13] := 0;
+	xp[14] := 0;
+	xp[15] := 0;
+	xp[16] := 0;
+	xp[17] := 0;
+	xp[18] := 0;
+	xp[19] := 0;
+	xp[20] := 0;
+	xp[21] := 0;
+	xp[22] := 0;
+	xp[23] := 0;
+	xp[24] := 0;
+	xp[25] := 0;
+	xp[26] := 0;
+	xp[27] := 0;
+	xp[28] := 0;
+	xp[29] := 0;
+
+  dmgcells[0] := dc1;
+	dmgcells[1] := dc2;
+	dmgcells[2] := dc3;
+	dmgcells[3] := dc4;
+	dmgcells[4] := dc5;
+	dmgcells[5] := dc6;
+	dmgcells[6] := dc7;
+	dmgcells[7] := dc8;
+	dmgcells[8] := dc9;
+	dmgcells[9] := dc10;
+	dmgcells[10] := dc11;
+	dmgcells[11] := dc12;
+	dmgcells[12] := dc13;
+	dmgcells[13] := dc14;
+	dmgcells[14] := dc15;
+	dmgcells[15] := dc16;
+	dmgcells[16] := dc17;
+	dmgcells[17] := dc18;
+	dmgcells[18] := dc19;
+	dmgcells[19] := dc20;
+	dmgcells[20] := dc21;
+	dmgcells[21] := dc22;
+	dmgcells[22] := dc23;
+	dmgcells[23] := dc24;
+	dmgcells[24] := dc25;
+	dmgcells[25] := dc26;
+	dmgcells[26] := dc27;
+	dmgcells[27] := dc28;
+	dmgcells[28] := dc29;
+	dmgcells[29] := dc30;
+
+  SetDamageCells(xp,dmgcells);
+
+
+
+
 end;
+
+
+
 
 end.
