@@ -724,16 +724,69 @@ begin
   list.EtiquettePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Etiquette)+'.jpg');
 
   //Способности.Познания
-  list.DrivingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Academy)+'.jpg');
-  list.TradePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Laws)+'.jpg');
-  list.SurvivalPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Wisdom)+'.jpg');
-  list.PerformancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Linguistics)+'.jpg');
-  list.AnimalKenPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Medicine)+'.jpg');
-  list.HandicraftsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Theology)+'.jpg');
-  list.StealthPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Occultism)+'.jpg');
-  list.ShootingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Policy)+'.jpg');
-  list.FencingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Investigations)+'.jpg');
-  list.EtiquettePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Seneschal)+'.jpg');
+  list.AcademyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Academy)+'.jpg');
+  list.LawsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Laws)+'.jpg');
+  list.WisdomPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Wisdom)+'.jpg');
+  list.LinguisticsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Linguistics)+'.jpg');
+  list.MedicinePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Medicine)+'.jpg');
+  list.TheologyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Theology)+'.jpg');
+  list.OccultismPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Occultism)+'.jpg');
+  list.PolicyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Policy)+'.jpg');
+  list.InvestigationsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Investigations)+'.jpg');
+  list.SeneschalPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Seneschal)+'.jpg');
+
+  //Преимущества.Дополнения.Уровни
+  list.AdditionsLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[0])+'.jpg');
+  list.AdditionsLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[1])+'.jpg');
+  list.AdditionsLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[2])+'.jpg');
+  list.AdditionsLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[3])+'.jpg');
+  list.AdditionsLevel5PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[4])+'.jpg');
+  list.AdditionsLevel6PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[5])+'.jpg');
+  list.AdditionsLevel7PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[6])+'.jpg');
+  list.AdditionsLevel8PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[7])+'.jpg');
+  list.AdditionsLevel9PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[8])+'.jpg');
+
+  //Преимущества.Дополнения.Имена
+  list.AdditionsName1.Text:=data.AdditionsName[0];
+  list.AdditionsName2.Text:=data.AdditionsName[1];
+  list.AdditionsName3.Text:=data.AdditionsName[2];
+  list.AdditionsName4.Text:=data.AdditionsName[3];
+  list.AdditionsName5.Text:=data.AdditionsName[4];
+  list.AdditionsName6.Text:=data.AdditionsName[5];
+  list.AdditionsName7.Text:=data.AdditionsName[6];
+  list.AdditionsName8.Text:=data.AdditionsName[7];
+  list.AdditionsName9.Text:=data.AdditionsName[8];
+
+  //Преимущества.Дисциплины.Уровни
+  list.DisciplineLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[0])+'.jpg');
+  list.DisciplineLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[1])+'.jpg');
+  list.DisciplineLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[2])+'.jpg');
+  list.DisciplineLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[3])+'.jpg');
+  list.DisciplineLevel5PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[4])+'.jpg');
+  list.DisciplineLevel6PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[5])+'.jpg');
+  list.DisciplineLevel7PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[6])+'.jpg');
+  list.DisciplineLevel8PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[7])+'.jpg');
+  list.DisciplineLevel9PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[8])+'.jpg');
+  list.DisciplineLevel10PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[9])+'.jpg');
+
+  //Преимущества.Дисциплины.Имена
+  list.DisciplineName1.Text:=data.DisciplineName[0];
+  list.DisciplineName2.Text:=data.DisciplineName[1];
+  list.DisciplineName3.Text:=data.DisciplineName[2];
+  list.DisciplineName4.Text:=data.DisciplineName[3];
+  list.DisciplineName5.Text:=data.DisciplineName[4];
+  list.DisciplineName6.Text:=data.DisciplineName[5];
+  list.DisciplineName7.Text:=data.DisciplineName[6];
+  list.DisciplineName8.Text:=data.DisciplineName[7];
+  list.DisciplineName9.Text:=data.DisciplineName[8];
+  list.DisciplineName10.Text:=data.DisciplineName[9];
+
+  //Преимущества.Добродетели
+  list.ConscientiousnessAndConvictionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.ConscientiousnessAndConviction)+'.jpg');
+  list.SelfmonitoringAndInstinctsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.SelfmonitoringAndInstincts)+'.jpg');
+  list.CouragePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.Courage)+'.jpg');
+
+
 
 
 
