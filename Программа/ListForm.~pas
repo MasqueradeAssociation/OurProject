@@ -316,7 +316,6 @@ type
     dc28: TImage;
     dc29: TImage;
     dc30: TImage;
-    //procedure SetPoints(img: TImage; param, mode: Integer);
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;
@@ -534,7 +533,7 @@ implementation
 
 {$R *.dfm}
 
-procedure SetPoints(img: TImage; param, mode: Integer);
+procedure SetPoints(img: TImage;var param, mode: Integer);
 begin
   if (mode<34) then
   begin
@@ -682,259 +681,259 @@ end;
 procedure TListCharacter.AgilityMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AgilityPointImg,2,X);
+  SetPoints(AgilityPointImg,listchar.Agility ,X);
 end;
 
 procedure TListCharacter.EnduranceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EndurancePointImg,2,X);
+  SetPoints(EndurancePointImg, listchar.Endurance, X);
 end;
 
 procedure TListCharacter.CharmMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CharmPointImg,2,X);
+  SetPoints(CharmPointImg,listchar.Charm,X);
 end;
 
 procedure TListCharacter.ManipulationMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ManipulationPointImg,2,X);
+  SetPoints(ManipulationPointImg,listchar.Manipulation, X);
 end;
 
 procedure TListCharacter.AppearanceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AppearancePointImg,2,X);
+  SetPoints(AppearancePointImg,listchar.Appearance,X);
 end;
 
 procedure TListCharacter.PerceptionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PerceptionPointImg,2,X);
+  SetPoints(PerceptionPointImg,listchar.Perception,X);
 end;
 
 procedure TListCharacter.IntelligenceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(IntelligencePointImg,2,X);
+  SetPoints(IntelligencePointImg,listchar.Intelligence,X);
 end;
 
 procedure TListCharacter.SavvyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SavvyPointImg,2,X);
+  SetPoints(SavvyPointImg,listchar.Savvy,X);
 end;
 
 procedure TListCharacter.AthleticsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AthleticsPointImg,2,X);
+  SetPoints(AthleticsPointImg, listchar.Athletics,X);
 end;
 
 procedure TListCharacter.MindfulnessMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(MindfulnessPointImg,2,X);
+  SetPoints(MindfulnessPointImg, listchar.Mindfulness,X);
 end;
 
 procedure TListCharacter.IntimidationMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(IntimidationPointImg,2,X);
+  SetPoints(IntimidationPointImg,listchar.Intimidation,X);
 end;
 
 procedure TListCharacter.SleightOfHandMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SleightOfHandPointImg,2,X);
+  SetPoints(SleightOfHandPointImg, listchar.SleightOfHand,X);
 end;
 
 procedure TListCharacter.LeadershipMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LeadershipPointImg,2,X);
+  SetPoints(LeadershipPointImg,listchar.Leadership,X);
 end;
 
 procedure TListCharacter.FightMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(FightPointImg,2,X);
+  SetPoints(FightPointImg,listchar.Fight,X);
 end;
 
 procedure TListCharacter.EvasionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EvasionPointImg,2,X);
+  SetPoints(EvasionPointImg,listchar.Evasion,X);
 end;
 
 procedure TListCharacter.CunningMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CunningPointImg,2,X);
+  SetPoints(CunningPointImg,listchar.Cunning,X);
 end;
 
 procedure TListCharacter.ExpressionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ExpressionPointImg,2,X);
+  SetPoints(ExpressionPointImg,listchar.Expression,X);
 end;
 
 procedure TListCharacter.EmpathyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EmpathyPointImg,2,X);
+  SetPoints(EmpathyPointImg,listchar.Empathy,X);
 end;
 
 procedure TListCharacter.DrivingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DrivingPointImg,2,X);
+  SetPoints(DrivingPointImg,listchar.Driving,X);
 end;
 
 procedure TListCharacter.TradeMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(TradePointImg,2,X);
+  SetPoints(TradePointImg,listchar.Trade,X);
 end;
 
 procedure TListCharacter.SurvivalMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SurvivalPointImg,2,X);
+  SetPoints(SurvivalPointImg,listchar.Survival,X);
 end;
 
 procedure TListCharacter.PerformanceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PerformancePointImg,2,X);
+  SetPoints(PerformancePointImg,listchar.Performance,X);
 end;
 
 procedure TListCharacter.AnimalKenMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AnimalKenPointImg,2,X);
+  SetPoints(AnimalKenPointImg,listchar.AnimalKen,X);
 end;
 
 procedure TListCharacter.HandicraftsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(HandicraftsPointImg,2,X);
+  SetPoints(HandicraftsPointImg,listchar.Handicrafts,X);
 end;
 
 procedure TListCharacter.StealthMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(StealthPointImg,2,X);
+  SetPoints(StealthPointImg,listchar.Stealth,X);
 end;
 
 procedure TListCharacter.ShootingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ShootingPointImg,2,X);
+  SetPoints(ShootingPointImg,listchar.Shooting,X);
 end;
 
 procedure TListCharacter.FencingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(FencingPointImg,2,X);
+  SetPoints(FencingPointImg,listchar.Fencing,X);
 end;
 
 procedure TListCharacter.EtiquetteMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EtiquettePointImg,2,X);
+  SetPoints(EtiquettePointImg,listchar.Etiquette,X);
 end;
 
 procedure TListCharacter.AcademyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AcademyPointImg,2,X);
+  SetPoints(AcademyPointImg,listchar.Academy,X);
 end;
 
 procedure TListCharacter.LawsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LawsPointImg,2,X);
+  SetPoints(LawsPointImg,listchar.Laws,X);
 end;
 
 procedure TListCharacter.WisdomMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(WisdomPointImg,8,X);
+  SetPoints(WisdomPointImg,listchar.Wisdom,X);
 end;
 
 procedure TListCharacter.LinguisticsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LinguisticsPointImg,2,X);
+  SetPoints(LinguisticsPointImg,listchar.Linguistics,X);
 end;
 
 procedure TListCharacter.MedicineMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(MedicinePointImg,2,X);
+  SetPoints(MedicinePointImg,listchar.Medicine,X);
 end;
 
 procedure TListCharacter.TheologyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(TheologyPointImg,2,X);
+  SetPoints(TheologyPointImg,listchar.Theology,X);
 end;
 
 procedure TListCharacter.OccultismMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(OccultismPointImg,2,X);
+  SetPoints(OccultismPointImg,listchar.Occultism,X);
 end;
 
 procedure TListCharacter.PolicyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PolicyPointImg,2,X);
+  SetPoints(PolicyPointImg,listchar.Policy,X);
 end;
 
 procedure TListCharacter.InvestigationsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(InvestigationsPointImg,2,X);
+  SetPoints(InvestigationsPointImg,listchar.Investigations,X);
 end;
 
 procedure TListCharacter.SeneschalMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SeneschalPointImg,2,X);
+  SetPoints(SeneschalPointImg,listchar.Seneschal,X);
 end;
 
 procedure TListCharacter.HumanityAndPathLevelMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(HumanityAndPathLevelPointImg,2,X);
+  SetPoints(HumanityAndPathLevelPointImg,listchar.HumanityAndPathLevel,X);
 end;
 
 procedure TListCharacter.DopStatLevel1MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel1PointImg,2,X);
+  SetPoints(DopStatLevel1PointImg,listchar.DopStatLevel[0],X);
 end;
 
 procedure TListCharacter.DopStatLevel2MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel2PointImg,2,X);
+  SetPoints(DopStatLevel2PointImg,listchar.DopStatLevel[1],X);
 end;
 
 procedure TListCharacter.DopStatLevel3MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel3PointImg,2,X);
+  SetPoints(DopStatLevel3PointImg,listchar.DopStatLevel[2],X);
 end;
 
 procedure TListCharacter.DopStatLevel4MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel4PointImg,2,X);
+  SetPoints(DopStatLevel4PointImg,listchar.DopStatLevel[3],X);
 end;
 
 procedure TListCharacter.WillpowerStaticMPClick(Sender: TObject);
@@ -946,87 +945,87 @@ procedure TListCharacter.WillpowerDinamicMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
 
-  SetPoints2(WillpowerDinamicPointImg, listchar.WillpowerDinamic ,X);
+  SetPoints2(WillpowerDinamicPointImg, listchar.WillpowerDinamic, X);
 end;
 
 procedure TListCharacter.ConscientiousnessAndConvictionMPMouseDown(
   Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
   Y: Integer);
 begin
-  SetPoints(ConscientiousnessAndConvictionPointImg,2,X);
+  SetPoints(ConscientiousnessAndConvictionPointImg,listchar.ConscientiousnessAndConviction,X);
 end;
 
 procedure TListCharacter.SelfmonitoringAndInstinctsMPMouseDown(
   Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
   Y: Integer);
 begin
-  SetPoints(SelfmonitoringAndInstinctsPointImg,2,X);
+  SetPoints(SelfmonitoringAndInstinctsPointImg,listchar.SelfmonitoringAndInstincts,X);
 end;
 
 procedure TListCharacter.CourageMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CouragePointImg,2,X);
+  SetPoints(CouragePointImg,listchar.Courage,X);
 end;
 
 procedure TListCharacter.WillpowerStaticMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(WillpowerStaticPointImg,2,X);
+  SetPoints(WillpowerStaticPointImg,listchar.WillpowerStatic,X);
 end;
 
 procedure TListCharacter.AdditionsLevel1MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel1PointImg,2,X);
+  SetPoints(AdditionsLevel1PointImg,listchar.AdditionsLevel[0],X);
 end;
 
 procedure TListCharacter.AdditionsLevel2MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel2PointImg,2,X);
+  SetPoints(AdditionsLevel2PointImg,listchar.AdditionsLevel[1],X);
 end;
 
 procedure TListCharacter.AdditionsLevel3MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel3PointImg,2,X);
+  SetPoints(AdditionsLevel3PointImg,listchar.AdditionsLevel[2],X);
 end;
 
 procedure TListCharacter.AdditionsLevel4MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel4PointImg,2,X);
+  SetPoints(AdditionsLevel4PointImg,listchar.AdditionsLevel[3],X);
 end;
 
 procedure TListCharacter.AdditionsLevel5MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel5PointImg,2,X);
+  SetPoints(AdditionsLevel5PointImg,listchar.AdditionsLevel[4],X);
 end;
 
 procedure TListCharacter.AdditionsLevel6MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel6PointImg,2,X);
+  SetPoints(AdditionsLevel6PointImg,listchar.AdditionsLevel[5],X);
 end;
 
 procedure TListCharacter.AdditionsLevel7MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel7PointImg,2,X);
+  SetPoints(AdditionsLevel7PointImg,listchar.AdditionsLevel[6],X);
 end;
 
 procedure TListCharacter.AdditionsLevel8MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel8PointImg,2,X);
+  SetPoints(AdditionsLevel8PointImg,listchar.AdditionsLevel[7],X);
 end;
 
 procedure TListCharacter.AdditionsLevel9MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel9PointImg,2,X);
+  SetPoints(AdditionsLevel9PointImg,listchar.AdditionsLevel[8],X);
 end;
 
 procedure TListCharacter.DisciplineLevel1MPMouseDown(Sender: TObject;
