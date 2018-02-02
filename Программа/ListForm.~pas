@@ -544,6 +544,8 @@ begin
     if (param <>8 ) then param:=param+1;
   end;
 
+  //img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(param)+'.jpg');
+
   case param of
   0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points0.jpg');
   1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points1.jpg');
@@ -653,18 +655,38 @@ begin
   end;
 end;
 
-procedure SetDamageCells(dmg: Array of Integer; dmgc: Array of TImage);
+
+
+procedure SetDamageCells(var dmg: Array of Integer; dmgc: Array of TImage);
 var
   i: Integer;
 begin
   For i:=0 to 29 do
   begin
-    SetDamageCell(dmg[i],dmgc[i]);
+    case dmg[i] of
+    0: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell0.jpg');
+    1: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell1.jpg');
+    2: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell2.jpg');
+    3: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell3.jpg');
+    end;
+    //SetDamageCell(dmg[i],dmgc[i]);
   end;
-
 end;
 
+procedure SetList(list: TListCharacter; data: TListPers);
+begin
+  list.NameEdit.Text:=data.NameCharacter;
+  list.OwnerEdit.Text:=data.Owner;
+  list.NatureEdit.Text:=data.Nature;
+  list.ChronicleEdit.Text:=data.Chronicle;
+  list.MaskEdit.Text:=data.Mask;
+  list.ClanEdit.Text:=data.Clan;
+  list.GenEdit.Text:=data.Gen;
+  list.OwnerEdit.Text:=data.Owner;
+  list.NameEdit.Text:=data.NameCharacter;
 
+
+end;
 
 
 

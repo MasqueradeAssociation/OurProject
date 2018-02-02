@@ -10,6 +10,7 @@ type
     ////Основнвя информация
     NameCharacter:string;//Имя
     Owner:string;//Игрок
+    Clan:string;//Клан
     Nature:string;//Натура
     Mask:string;//Маска
     Chronicle:string;//Хроника
@@ -95,6 +96,7 @@ begin
   NameCharacter:='';
   Owner:='';
   Nature:='';
+  Clan:='';
   Mask:='';
   Chronicle:='';
   Concept:='';
@@ -180,6 +182,7 @@ begin
   Writeln(f,Owner);
   Writeln(f,Nature);
   Writeln(f,Mask);
+  Writeln(f,Clan);
   Writeln(f,Chronicle);
   Writeln(f,Concept);
   Writeln(f,Home);
@@ -260,6 +263,7 @@ begin
   Read(f,Owner);
   Read(f,Nature);
   Read(f,Mask);
+  Read(f,Clan);
   Read(f,Chronicle);
   Read(f,Concept);
   Read(f,Home);
