@@ -675,6 +675,9 @@ end;
 
 procedure SetList(list: TListCharacter; data: TListPers);
 begin
+
+
+  //Общие данные
   list.NameEdit.Text:=data.NameCharacter;
   list.OwnerEdit.Text:=data.Owner;
   list.NatureEdit.Text:=data.Nature;
@@ -684,6 +687,17 @@ begin
   list.GenEdit.Text:=IntToStr(data.Gen);
   list.HomeEdit.Text:=data.Home;
   list.ConceptEdit.Text:=data.Concept;
+
+  //Атрибуты
+  list.StrengthPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Strength)+'.jpg');
+  list.AgilityPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Agility)+'.jpg');
+  list.EndurancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Endurance)+'.jpg');
+  list.CharmPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Charm)+'.jpg');
+  list.ManipulationPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Manipulation)+'.jpg');
+  list.AppearancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Appearance)+'.jpg');
+  list.PerceptionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Perception)+'.jpg');
+  list.IntelligencePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Intelligence)+'.jpg');
+  list.SavvyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Savvy)+'.jpg');
 
 
 end;
@@ -1313,6 +1327,8 @@ begin
 //
 
   listchar := TListPers.Create;
+
+  SetList(ListCharacter, listchar);
 
   SetHealthPoit(27, hp1,hp2,hp3);
 
