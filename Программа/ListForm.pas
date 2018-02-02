@@ -240,10 +240,6 @@ type
     WillpowerDinamicPointImg: TImage;
     WillpowerDinamicMP: TImage;
     BloodPool1: TImage;
-    BloodPool2: TImage;
-    BloodPool3: TImage;
-    BloodPool4: TImage;
-    BloodPool5: TImage;
     Edit38: TEdit;
     Edit35: TEdit;
     Edit36: TEdit;
@@ -253,16 +249,11 @@ type
     Edit31: TEdit;
     Edit30: TEdit;
     Edit9: TEdit;
-    Image57: TImage;
+    BloodPoolMP: TImage;
     Edit39: TEdit;
     Edit40: TEdit;
     Edit41: TEdit;
-    Image58: TImage;
-    Image61: TImage;
-    Image59: TImage;
-    Image60: TImage;
-    Image62: TImage;
-    Image63: TImage;
+    hp1: TImage;
     Edit32: TEdit;
     DopStatLevel1PointImg: TImage;
     DopStatLevel1MP: TImage;
@@ -289,6 +280,15 @@ type
     Image83: TImage;
     e1: TEdit;
     e3: TEdit;
+    BloodPool2: TImage;
+    BloodPool3: TImage;
+    BloodPool4: TImage;
+    BloodPool5: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    hp2: TImage;
+    hp3: TImage;
     //procedure SetPoints(img: TImage; param, mode: Integer);
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -427,6 +427,9 @@ type
       Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure DisciplineLevel10MPMouseDown(Sender: TObject;
       Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure BloodPoolMPMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -491,6 +494,68 @@ begin
   8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells8.jpg');
   end;
 end;
+
+procedure SetBloodPool(param, mode: Integer; b1,b2,b3,b4,b5: TImage);
+var
+  d, e: Integer;
+begin
+
+  b1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  b2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  b3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  b4.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  b5.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+
+
+  if (mode<34) then
+  begin
+    if (param <>0 ) then param:=param-1;
+  end
+  else
+  begin
+    if (param <>50 ) then param:=param+1;
+  end;
+  d:=param div 10;
+  e:=param mod 10;
+
+  if (d >= 1) then b1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
+  if (d >= 2) then b2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
+  if (d >= 3) then b3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
+  if (d >= 4) then b4.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
+  if (d >= 5) then b5.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
+
+  if (d = 0) then b1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
+  if (d = 1) then b2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
+  if (d = 2) then b3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
+  if (d = 3) then b4.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
+  if (d = 4) then b5.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
+end;
+
+procedure SetHealthPoit(param: Integer; h1,h2,h3: TImage);
+var
+  d, e: Integer;
+begin
+
+  h1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points0.jpg');
+  h2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points0.jpg');
+  h3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points0.jpg');
+
+  d:=param div 10;
+  e:=param mod 10;
+
+  if (d >= 1) then h1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points10.jpg');
+  if (d >= 2) then h2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points10.jpg');
+  if (d >= 3) then h3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points10.jpg');
+
+
+  if (d = 0) then h1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
+  if (d = 1) then h2.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
+  if (d = 2) then h3.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(e)+'.jpg');
+end;
+
+
+
+
 
 
 
@@ -909,6 +974,18 @@ procedure TListCharacter.DisciplineLevel10MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   SetPoints(DisciplineLevel10PointImg,2,X);
+end;
+
+procedure TListCharacter.BloodPoolMPMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  SetBloodPool(1, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
+end;
+
+procedure TListCharacter.FormCreate(Sender: TObject);
+begin
+//
+  SetHealthPoit(27, hp1,hp2,hp3);
 end;
 
 end.
