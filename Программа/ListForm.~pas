@@ -699,6 +699,31 @@ begin
   list.IntelligencePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Intelligence)+'.jpg');
   list.SavvyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Savvy)+'.jpg');
 
+  //Способности.Таланты
+  list.AthleticsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Athletics)+'.jpg');
+  list.MindfulnessPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Mindfulness)+'.jpg');
+  list.EndurancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Intimidation)+'.jpg');
+  list.SleightOfHandPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.SleightOfHand)+'.jpg');
+  list.LeadershipPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Leadership)+'.jpg');
+  list.FightPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Fight)+'.jpg');
+  list.EvasionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Evasion)+'.jpg');
+  list.CunningPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Cunning)+'.jpg');
+  list.ExpressionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Expression)+'.jpg');
+  list.EmpathyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Empathy)+'.jpg');
+
+  //Способности.Навыки
+  list.DrivingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Driving)+'.jpg');
+  list.TradePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Trade)+'.jpg');
+  list.SurvivalPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Survival)+'.jpg');
+  list.PerformancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Performance)+'.jpg');
+  list.AnimalKenPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AnimalKen)+'.jpg');
+  list.HandicraftsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Handicrafts)+'.jpg');
+  list.StealthPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Stealth)+'.jpg');
+  list.ShootingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Shooting)+'.jpg');
+  list.FencingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Fencing)+'.jpg');
+  list.EtiquettePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Etiquette)+'.jpg');
+
+
 
 end;
 
