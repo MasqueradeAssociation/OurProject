@@ -277,6 +277,18 @@ type
     Edit44: TEdit;
     Image70: TImage;
     Image71: TImage;
+    Image72: TImage;
+    Image73: TImage;
+    Image74: TImage;
+    Image75: TImage;
+    Image76: TImage;
+    Image77: TImage;
+    Image78: TImage;
+    Image79: TImage;
+    Image80: TImage;
+    Image81: TImage;
+    Image82: TImage;
+    Image83: TImage;
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;
