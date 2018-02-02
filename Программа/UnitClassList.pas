@@ -91,8 +91,81 @@ type
 implementation
 
 constructor TListPers.Create;
+var i:Integer;
 begin
-
+  NameCharacter:='';
+  Owner:='';
+  Nature:='';
+  Mask:='';
+  Chronicle:='';
+  Concept:='';
+  Home:='';
+  Gen:=13;
+  Strength:=0;
+  Agility:=0;
+  Endurance:=0;
+  Charm:=0;
+  Manipulation:=0;
+  Appearance:=0;
+  Perception:=0;
+  Intelligence:=0;
+  Savvy:=0;
+  Athletics:=0;
+  Mindfulness:=0;
+  Intimidation:=0;
+  SleightOfHand:=0;
+  Leadership:=0;
+  Fight:=0;
+  Evasion:=0;
+  Cunning:=0;
+  Expression:=0;
+  Empathy:=0;
+  Driving:=0;
+  Trade:=0;
+  Survival:=0;
+  Performance:=0;
+  AnimalKen:=0;
+  Handicrafts:=0;
+  Stealth:=0;
+  Shooting:=0;
+  Fencing:=0;
+  Etiquette:=0;
+  Academy:=0;
+  Laws:=0;
+  Wisdom:=0;
+  Linguistics:=0;
+  Medicine:=0;
+  Theology:=0;
+  Occultism:=0;
+  Policy:=0;
+  Investigations:=0;
+  Seneschal:=0;
+  ConscientiousnessAndConviction:=0;
+  SelfmonitoringAndInstincts:=0;
+  Courage:=0;
+  HumanityAndPathName:='Человечность';
+  HumanityAndPathLevel:=0;
+  WillpowerStatic:=0;
+  WillpowerDinamic:=0;
+  BloodPool:=0;
+  for i:=0 to 20 do
+    DisciplineName[i]:='';
+  for i:=0 to 20 do
+    DisciplineLevel[i]:=0;
+  for i:=0 to 20 do
+    AdditionsName[i]:='';
+  for i:=0 to 20 do
+    AdditionsLevel[i]:=0;
+  for i:=0 to 20 do
+    Virtues[i]:='';
+  for i:=0 to 20 do
+    Vices[i]:='';
+  for i:=0 to 20 do
+    DopStatName[i]:='';
+  for i:=0 to 20 do
+    DopStatLevel[i]:=0;
+  for i:=0 to 30 do
+    XP[i]:=0;
 end;
 
 destructor TListPers.Destroy;
