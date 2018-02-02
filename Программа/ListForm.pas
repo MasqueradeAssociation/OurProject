@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, UnitClassList;
 
 type
   TListCharacter = class(TForm)
@@ -525,9 +525,8 @@ type
 
 var
   ListCharacter: TListCharacter;
+  listchar: TListPers;
 implementation
-
-uses UnitClassList;
 
 
 
@@ -559,7 +558,7 @@ begin
   end;
 end;
 
-procedure SetPoints2(img: TImage; param, mode: Integer);
+procedure SetPoints2(img: TImage; var param, mode: Integer);
 begin
   if (mode<34) then
   begin
@@ -676,7 +675,7 @@ procedure TListCharacter.StrengthMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
 
-  SetPoints(StrengthPointImg,2,X);
+  SetPoints(StrengthPointImg,listchar.Strength,X);
 
 end;
 
@@ -946,7 +945,8 @@ end;
 procedure TListCharacter.WillpowerDinamicMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints2(WillpowerDinamicPointImg,2,X);
+
+  SetPoints2(WillpowerDinamicPointImg, listchar.WillpowerDinamic, X);
 end;
 
 procedure TListCharacter.ConscientiousnessAndConvictionMPMouseDown(
@@ -1290,7 +1290,12 @@ var
  dmgcells: array[0..29] of TImage;
 begin
 //
+
+  listchar := TListPers.Create;
+
   SetHealthPoit(27, hp1,hp2,hp3);
+
+
 
 	xp[0] := 3;
 	xp[1] := 3;
@@ -1354,7 +1359,7 @@ begin
 	dmgcells[28] := dc29;
 	dmgcells[29] := dc30;
 
-  SetDamageCells(xp,dmgcells);
+  SetDamageCells(listchar.XP,dmgcells);
 
 
 
