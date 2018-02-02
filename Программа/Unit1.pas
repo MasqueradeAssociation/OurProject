@@ -9,7 +9,9 @@ uses
 type
   TMainForm = class(TForm)
     Button1: TButton;
+    Dice: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure DiceClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,13 +23,18 @@ var
 
 implementation
 
-uses ListForm;
+uses ListForm, UnitDice;
 
 {$R *.dfm}
 
 procedure TMainForm.Button1Click(Sender: TObject);
 begin
   ListCharacter.Show();
+end;
+
+procedure TMainForm.DiceClick(Sender: TObject);
+begin
+  DiceForm.Show();
 end;
 
 end.

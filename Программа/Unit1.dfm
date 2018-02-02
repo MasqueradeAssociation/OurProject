@@ -1,4 +1,5 @@
 object MainForm: TMainForm
+
   Left = 302
   Top = 203
   Width = 1305
@@ -14,12 +15,21 @@ object MainForm: TMainForm
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
-    Left = 104
-    Top = 112
+    Left = 1160
+    Top = 64
     Width = 75
     Height = 25
     Caption = 'Button1'
     TabOrder = 0
     OnClick = Button1Click
+  end
+  object Dice: TButton
+    Left = 1160
+    Top = 128
+    Width = 75
+    Height = 25
+    Caption = 'Dice'
+    TabOrder = 1
+    OnClick = DiceClick
   end
 end
