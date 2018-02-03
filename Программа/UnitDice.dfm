@@ -1,6 +1,6 @@
 object DiceForm: TDiceForm
-  Left = 641
-  Top = 557
+  Left = 674
+  Top = 542
   BorderStyle = bsSingle
   Caption = #1041#1088#1086#1089#1086#1082' '#1082#1091#1073#1080#1082#1086#1074'(d10)'
   ClientHeight = 278
@@ -8,25 +8,38 @@ object DiceForm: TDiceForm
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -21
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 25
   object lbl1: TLabel
-    Left = 48
+    Left = 24
     Top = 16
-    Width = 105
-    Height = 13
+    Width = 195
+    Height = 25
     Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1082#1091#1073#1080#1082#1086#1074
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object lbl2: TLabel
-    Left = 248
+    Left = 232
     Top = 16
-    Width = 56
-    Height = 13
+    Width = 105
+    Height = 25
     Caption = #1057#1083#1086#1078#1085#1086#1089#1090#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object kountdice: TRadioGroup
     Left = 16
@@ -34,6 +47,11 @@ object DiceForm: TDiceForm
     Width = 177
     Height = 225
     Columns = 3
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
     ItemIndex = 0
     Items.Strings = (
       '1'
@@ -51,6 +69,7 @@ object DiceForm: TDiceForm
       '13'
       '14'
       '15')
+    ParentFont = False
     TabOrder = 0
   end
   object difficult: TRadioGroup
@@ -59,6 +78,11 @@ object DiceForm: TDiceForm
     Width = 145
     Height = 225
     Columns = 2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
     ItemIndex = 5
     Items.Strings = (
       '1'
@@ -71,6 +95,7 @@ object DiceForm: TDiceForm
       '8'
       '9'
       '10')
+    ParentFont = False
     TabOrder = 1
   end
   object Roll: TButton

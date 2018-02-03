@@ -12,6 +12,7 @@ type
     Dice: TButton;
     procedure Button1Click(Sender: TObject);
     procedure DiceClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,6 +36,13 @@ end;
 procedure TMainForm.DiceClick(Sender: TObject);
 begin
   DiceForm.Show();
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  AddFontResource('VTMB_MainMenu2.ttf');
+  Dice.Font.Name:='VTMB_MainMenu2';
+  Button1.Font.Name:='VTMB_MainMenu2';
 end;
 
 end.

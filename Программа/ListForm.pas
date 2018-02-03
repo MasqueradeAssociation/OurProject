@@ -568,6 +568,7 @@ type
     procedure DopStatName2Exit(Sender: TObject);
     procedure DopStatName3Exit(Sender: TObject);
     procedure DopStatName4Exit(Sender: TObject);
+    procedure NewPers1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -1580,6 +1581,78 @@ begin
 
   SetList(ListCharacter, listchar);
 
+  AddFontResource('VTMB_MainMenu2.ttf');
+  LoadPers.Font.Name:='VTMB_MainMenu2';
+  NewPers1.Font.Name:='VTMB_MainMenu2';
+  SavePers.Font.Name:='VTMB_MainMenu2';
+  Label1.Font.Name:='VTMB_MainMenu2';
+  Label2.Font.Name:='VTMB_MainMenu2';
+  Label3.Font.Name:='VTMB_MainMenu2';
+  Label4.Font.Name:='VTMB_MainMenu2';
+  Label5.Font.Name:='VTMB_MainMenu2';
+  Label6.Font.Name:='VTMB_MainMenu2';
+  Label7.Font.Name:='VTMB_MainMenu2';
+  Label8.Font.Name:='VTMB_MainMenu2';
+  Label9.Font.Name:='VTMB_MainMenu2';
+  Label10.Font.Name:='VTMB_MainMenu2';
+  Label11.Font.Name:='VTMB_MainMenu2';
+  Label12.Font.Name:='VTMB_MainMenu2';
+  Label13.Font.Name:='VTMB_MainMenu2';
+  Label14.Font.Name:='VTMB_MainMenu2';
+  Label15.Font.Name:='VTMB_MainMenu2';
+  Label16.Font.Name:='VTMB_MainMenu2';
+  Label17.Font.Name:='VTMB_MainMenu2';
+  Label18.Font.Name:='VTMB_MainMenu2';
+  Label19.Font.Name:='VTMB_MainMenu2';
+  Label20.Font.Name:='VTMB_MainMenu2';
+  Label21.Font.Name:='VTMB_MainMenu2';
+  Label22.Font.Name:='VTMB_MainMenu2';
+  Label23.Font.Name:='VTMB_MainMenu2';
+  Label24.Font.Name:='VTMB_MainMenu2';
+  Label25.Font.Name:='VTMB_MainMenu2';
+  Label26.Font.Name:='VTMB_MainMenu2';
+  Label27.Font.Name:='VTMB_MainMenu2';
+  Label28.Font.Name:='VTMB_MainMenu2';
+  Label29.Font.Name:='VTMB_MainMenu2';
+  Label30.Font.Name:='VTMB_MainMenu2';
+  Label31.Font.Name:='VTMB_MainMenu2';
+  Label32.Font.Name:='VTMB_MainMenu2';
+  Label33.Font.Name:='VTMB_MainMenu2';
+  Label34.Font.Name:='VTMB_MainMenu2';
+  Label35.Font.Name:='VTMB_MainMenu2';
+  Label36.Font.Name:='VTMB_MainMenu2';
+  Label37.Font.Name:='VTMB_MainMenu2';
+  Label38.Font.Name:='VTMB_MainMenu2';
+  Label39.Font.Name:='VTMB_MainMenu2';
+  Label40.Font.Name:='VTMB_MainMenu2';
+  Label41.Font.Name:='VTMB_MainMenu2';
+  Label42.Font.Name:='VTMB_MainMenu2';
+  Label43.Font.Name:='VTMB_MainMenu2';
+  Label44.Font.Name:='VTMB_MainMenu2';
+  Label45.Font.Name:='VTMB_MainMenu2';
+  Label46.Font.Name:='VTMB_MainMenu2';
+  Label47.Font.Name:='VTMB_MainMenu2';
+  Label48.Font.Name:='VTMB_MainMenu2';
+  Label49.Font.Name:='VTMB_MainMenu2';
+  Label50.Font.Name:='VTMB_MainMenu2';
+  Label51.Font.Name:='VTMB_MainMenu2';
+  Label52.Font.Name:='VTMB_MainMenu2';
+  Label53.Font.Name:='VTMB_MainMenu2';
+  Label54.Font.Name:='VTMB_MainMenu2';
+  Label55.Font.Name:='VTMB_MainMenu2';
+  Label56.Font.Name:='VTMB_MainMenu2';
+  Label57.Font.Name:='VTMB_MainMenu2';
+  Label58.Font.Name:='VTMB_MainMenu2';
+  Label59.Font.Name:='VTMB_MainMenu2';
+  Label60.Font.Name:='VTMB_MainMenu2';
+  Label61.Font.Name:='VTMB_MainMenu2';
+  Label62.Font.Name:='VTMB_MainMenu2';
+  Label63.Font.Name:='VTMB_MainMenu2';
+  Label64.Font.Name:='VTMB_MainMenu2';
+  Label65.Font.Name:='VTMB_MainMenu2';
+  Label66.Font.Name:='VTMB_MainMenu2';
+  Label67.Font.Name:='VTMB_MainMenu2';
+  Label68.Font.Name:='VTMB_MainMenu2';
 end;
 
 
@@ -1820,6 +1893,85 @@ end;
 procedure TListCharacter.DopStatName4Exit(Sender: TObject);
 begin
   GetEditText(DopStatName4, listchar.DopStatName[3]);
+end;
+
+procedure TListCharacter.NewPers1Click(Sender: TObject);
+var i:Integer;
+begin
+  listchar.NameCharacter:='';
+  listchar.Owner:='';
+  listchar.Nature:='';
+  listchar.Clan:='';
+  listchar.Mask:='';
+  listchar.Chronicle:='';
+  listchar.Concept:='';
+  listchar.Home:='';
+  listchar.Gen:=13;
+  listchar.Strength:=0;
+  listchar.Agility:=0;
+  listchar.Endurance:=0;
+  listchar.Charm:=0;
+  listchar.Manipulation:=0;
+  listchar.Appearance:=0;
+  listchar.Perception:=0;
+  listchar.Intelligence:=0;
+  listchar.Savvy:=0;
+  listchar.Athletics:=0;
+  listchar.Mindfulness:=0;
+  listchar.Intimidation:=0;
+  listchar.SleightOfHand:=0;
+  listchar.Leadership:=0;
+  listchar.Fight:=0;
+  listchar.Evasion:=0;
+  listchar.Cunning:=0;
+  listchar.Expression:=0;
+  listchar.Empathy:=0;
+  listchar.Driving:=0;
+  listchar.Trade:=0;
+  listchar.Survival:=0;
+  listchar.Performance:=0;
+  listchar.AnimalKen:=0;
+  listchar.Handicrafts:=0;
+  listchar.Stealth:=0;
+  listchar.Shooting:=0;
+  listchar.Fencing:=0;
+  listchar.Etiquette:=0;
+  listchar.Academy:=0;
+  listchar.Laws:=0;
+  listchar.Wisdom:=0;
+  listchar.Linguistics:=0;
+  listchar.Medicine:=0;
+  listchar.Theology:=0;
+  listchar.Occultism:=0;
+  listchar.Policy:=0;
+  listchar.Investigations:=0;
+  listchar.Seneschal:=0;
+  listchar.ConscientiousnessAndConviction:=0;
+  listchar.SelfmonitoringAndInstincts:=0;
+  listchar.Courage:=0;
+  listchar.HumanityAndPathName:='Человечность';
+  listchar.HumanityAndPathLevel:=0;
+  listchar.WillpowerStatic:=0;
+  listchar.WillpowerDinamic:=0;
+  listchar.BloodPool:=0;
+  for i:=0 to 20 do
+    listchar.DisciplineName[i]:='';
+  for i:=0 to 20 do
+    listchar.DisciplineLevel[i]:=0;
+  for i:=0 to 20 do
+    listchar.AdditionsName[i]:='';
+  for i:=0 to 20 do
+    listchar.AdditionsLevel[i]:=0;
+  for i:=0 to 20 do
+    listchar.VirtuesAndVices[i]:='';
+  for i:=0 to 20 do
+    listchar.DopStatName[i]:='';
+  for i:=0 to 20 do
+    listchar.DopStatLevel[i]:=0;
+  for i:=0 to 30 do
+    listchar.XP[i]:=0;
+
+  SetList(ListCharacter,listchar);  
 end;
 
 end.
