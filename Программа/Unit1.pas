@@ -18,6 +18,7 @@ type
     { Public declarations }
   end;
 
+
 var
   MainForm: TMainForm;
 

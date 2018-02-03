@@ -1,9 +1,10 @@
 object DiceForm: TDiceForm
   Left = 641
   Top = 557
-  Width = 669
-  Height = 316
+  BorderStyle = bsSingle
   Caption = #1041#1088#1086#1089#1086#1082' '#1082#1091#1073#1080#1082#1086#1074'(d10)'
+  ClientHeight = 278
+  ClientWidth = 595
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
