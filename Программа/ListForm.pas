@@ -523,6 +523,7 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure SavePersClick(Sender: TObject);
     procedure LoadPersClick(Sender: TObject);
+    procedure NameEditExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -564,6 +565,11 @@ begin
   7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points7.jpg');
   8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points8.jpg');
   end;
+end;
+
+procedure GetEditText(edit: TEdit; var param: String);
+begin
+  param:=edit.Text;
 end;
 
 procedure SetPoints2(img: TImage; var param, mode: Integer);
@@ -713,7 +719,6 @@ procedure SetList(list: TListCharacter; data: TListPers);
 var
   dmgcells: array[0..29] of TImage;
 begin
-
 
   //Общие данные
   list.NameEdit.Text:=data.NameCharacter;
@@ -1541,6 +1546,11 @@ begin
   if OpenChar.Execute then
       listchar.OpenList(OpenChar.FileName);
   SetList(ListCharacter, listchar);
+end;
+
+procedure TListCharacter.NameEditExit(Sender: TObject);
+begin
+  GetEditText(NameEdit, listchar.NameCharacter);
 end;
 
 end.
