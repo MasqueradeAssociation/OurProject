@@ -10,6 +10,7 @@ type
     ////Основнвя информация
     NameCharacter:string;//Имя
     Owner:string;//Игрок
+    Clan:string;//Клан
     Nature:string;//Натура
     Mask:string;//Маска
     Chronicle:string;//Хроника
@@ -81,9 +82,10 @@ type
     //Методы
 
     procedure SaveList;
-    procedure OpenList;
+    procedure OpenList(NameCh:string);
     constructor Create;
     destructor Destroy;
+    function CalcHP(value: Integer): Integer;
 
   end;
 
@@ -95,6 +97,7 @@ begin
   NameCharacter:='';
   Owner:='';
   Nature:='';
+  Clan:='';
   Mask:='';
   Chronicle:='';
   Concept:='';
@@ -170,19 +173,18 @@ begin
 
 end;
 
+function TListPers.CalcHP(value: Integer): Integer;
+begin
+  result:= value + 10;
+end;
+
 procedure TListPers.SaveList();
 var f:Textfile;
     i:integer;
 begin
-  AssignFile(f,'Character'+NameCharacter+'.txt');
-  Reset(f);
-  Writeln(f,NameCharacter);
-  Writeln(f,Owner);
-  Writeln(f,Nature);
-  Writeln(f,Mask);
-  Writeln(f,Chronicle);
-  Writeln(f,Concept);
-  Writeln(f,Home);
+  AssignFile(f,NameCharacter+'.WodCh');// ExtractFilePath(Application.ExeName)+'\Character\'+
+  Rewrite(f);
+
   Writeln(f,Gen);
   Writeln(f,Strength);
   Writeln(f,Agility);
@@ -226,43 +228,49 @@ begin
   Writeln(f,ConscientiousnessAndConviction);
   Writeln(f,SelfmonitoringAndInstincts);
   Writeln(f,Courage);
-  Writeln(f,HumanityAndPathName);
+
   Writeln(f,HumanityAndPathLevel);
   Writeln(f,WillpowerStatic);
   Writeln(f,WillpowerDinamic);
   Writeln(f,BloodPool);
-  for i:=0 to 20 do
-    Writeln(f,DisciplineName[i]);
+
   for i:=0 to 20 do
     Writeln(f,DisciplineLevel[i]);
-  for i:=0 to 20 do
-    Writeln(f,AdditionsName[i]);
+
   for i:=0 to 20 do
     Writeln(f,AdditionsLevel[i]);
-  for i:=0 to 20 do
-    Writeln(f,VirtuesAndVices[i]);
-  for i:=0 to 20 do
-    Writeln(f,DopStatName[i]);
+
   for i:=0 to 20 do
     Writeln(f,DopStatLevel[i]);
   for i:=0 to 30 do
     Writeln(f,XP[i]);
+  Writeln(f,NameCharacter);
+  Writeln(f,Owner);
+  Writeln(f,Nature);
+  Writeln(f,Mask);
+  Writeln(f,Clan);
+  Writeln(f,Chronicle);
+  Writeln(f,Concept);
+  Writeln(f,Home);
+  Writeln(f,HumanityAndPathName);
+  for i:=0 to 20 do
+    Writeln(f,DisciplineName[i]);
+  for i:=0 to 20 do
+    Writeln(f,AdditionsName[i]);
+  for i:=0 to 20 do
+    Writeln(f,VirtuesAndVices[i]);
+  for i:=0 to 20 do
+    Writeln(f,DopStatName[i]);
   CloseFile(f);
 end;
 
-procedure TListPers.OpenList();
+procedure TListPers.OpenList(NameCh:string);
 var f:Textfile;
     i:Integer;
 begin
-  AssignFile(f,'Character'+NameCharacter+'.txt');
+  AssignFile(f,NameCh);//'Character'+NameCh+
   Reset(f);
-  Read(f,NameCharacter);
-  Read(f,Owner);
-  Read(f,Nature);
-  Read(f,Mask);
-  Read(f,Chronicle);
-  Read(f,Concept);
-  Read(f,Home);
+
   Read(f,Gen);
   Read(f,Strength);
   Read(f,Agility);
@@ -306,29 +314,44 @@ begin
   Read(f,ConscientiousnessAndConviction);
   Read(f,SelfmonitoringAndInstincts);
   Read(f,Courage);
-  Read(f,HumanityAndPathName);
+
   Read(f,HumanityAndPathLevel);
   Read(f,WillpowerStatic);
   Read(f,WillpowerDinamic);
   Read(f,BloodPool);
-  for i:=0 to 20 do
-    Read(f,DisciplineName[i]);
+
   for i:=0 to 20 do
     Read(f,DisciplineLevel[i]);
-  for i:=0 to 20 do
-    Read(f,AdditionsName[i]);
+
   for i:=0 to 20 do
     Read(f,AdditionsLevel[i]);
-  for i:=0 to 20 do
-    Read(f,VirtuesAndVices[i]);
-  for i:=0 to 20 do
-    Read(f,DopStatName[i]);
+
   for i:=0 to 20 do
     Read(f,DopStatLevel[i]);
   for i:=0 to 30 do
     Read(f,XP[i]);
+  Read(f,NameCharacter);
+  Read(f,Owner);
+  Read(f,Nature);
+  Read(f,Mask);
+  Read(f,Clan);
+  Read(f,Chronicle);
+  Read(f,Concept);
+  Read(f,Home);
+  Read(f,HumanityAndPathName);
+  for i:=0 to 20 do
+    Read(f,DisciplineName[i]);
+  for i:=0 to 20 do
+    Read(f,AdditionsName[i]);
+  for i:=0 to 20 do
+    Read(f,VirtuesAndVices[i]);
+  for i:=0 to 20 do
+    Read(f,DopStatName[i]);
   CloseFile(f);
 end;
+
+
+
 
 
 

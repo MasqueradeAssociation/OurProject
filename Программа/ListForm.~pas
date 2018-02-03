@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, UnitClassList;
 
 type
   TListCharacter = class(TForm)
@@ -316,7 +316,6 @@ type
     dc28: TImage;
     dc29: TImage;
     dc30: TImage;
-    //procedure SetPoints(img: TImage; param, mode: Integer);
     procedure StrengthMPMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure AgilityMPMouseDown(Sender: TObject; Button: TMouseButton;
@@ -525,9 +524,8 @@ type
 
 var
   ListCharacter: TListCharacter;
+  listchar: TListPers;
 implementation
-
-uses UnitClassList;
 
 
 
@@ -535,7 +533,7 @@ uses UnitClassList;
 
 {$R *.dfm}
 
-procedure SetPoints(img: TImage; param, mode: Integer);
+procedure SetPoints(img: TImage;var param, mode: Integer);
 begin
   if (mode<34) then
   begin
@@ -545,6 +543,8 @@ begin
   begin
     if (param <>8 ) then param:=param+1;
   end;
+
+  //img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(param)+'.jpg');
 
   case param of
   0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points0.jpg');
@@ -559,7 +559,7 @@ begin
   end;
 end;
 
-procedure SetPoints2(img: TImage; param, mode: Integer);
+procedure SetPoints2(img: TImage; var param, mode: Integer);
 begin
   if (mode<34) then
   begin
@@ -567,23 +567,52 @@ begin
   end
   else
   begin
-    if (param <>8 ) then param:=param+1;
+    if (param <>10 ) then param:=param+1;
   end;
 
   case param of
-  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells0.jpg');
-  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells1.jpg');
-  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells2.jpg');
-  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells3.jpg');
-  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells4.jpg');
-  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells5.jpg');
-  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells6.jpg');
-  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells7.jpg');
-  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8cells8.jpg');
+  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells0.jpg');
+  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells1.jpg');
+  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells2.jpg');
+  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells3.jpg');
+  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells4.jpg');
+  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells5.jpg');
+  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells6.jpg');
+  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells7.jpg');
+  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells8.jpg');
+  9: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells9.jpg');
+  10: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells10.jpg');
   end;
 end;
 
-procedure SetBloodPool(param, mode: Integer; b1,b2,b3,b4,b5: TImage);
+procedure SetPoints3(img: TImage; var param, mode: Integer);
+begin
+  if (mode<34) then
+  begin
+    if (param <>0 ) then param:=param-1;
+  end
+  else
+  begin
+    if (param <>10 ) then param:=param+1;
+  end;
+
+  case param of
+  0: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points0.jpg');
+  1: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points1.jpg');
+  2: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points2.jpg');
+  3: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points3.jpg');
+  4: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points4.jpg');
+  5: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points5.jpg');
+  6: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points6.jpg');
+  7: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points7.jpg');
+  8: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points8.jpg');
+  9: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points9.jpg');
+  10: img.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points10.jpg');
+  end;
+end;
+
+
+procedure SetBloodPool(var param, mode: Integer; b1,b2,b3,b4,b5: TImage);
 var
   d, e: Integer;
 begin
@@ -619,7 +648,7 @@ begin
   if (d = 4) then b5.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(e)+'.jpg');
 end;
 
-procedure SetHealthPoit(param: Integer; h1,h2,h3: TImage);
+procedure SetHealthPoint(param: Integer; h1,h2,h3: TImage);
 var
   d, e: Integer;
 begin
@@ -642,7 +671,7 @@ begin
 end;
 
 
-procedure SetDamageCell(param: Integer; c: TImage);
+procedure SetDamageCell(var param: Integer; c: TImage);
 begin
   param := param + 1;
   if (param = 4) then param := 0;
@@ -655,18 +684,215 @@ begin
   end;
 end;
 
-procedure SetDamageCells(dmg: Array of Integer; dmgc: Array of TImage);
+
+
+procedure SetDamageCells(var dmg: Array of Integer; dmgc: Array of TImage);
 var
   i: Integer;
 begin
   For i:=0 to 29 do
   begin
-    SetDamageCell(dmg[i]-1,dmgc[i]);
+    case dmg[i] of
+    0: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell0.jpg');
+    1: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell1.jpg');
+    2: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell2.jpg');
+    3: dmgc[i].Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\cell3.jpg');
+    end;
+    //SetDamageCell(dmg[i],dmgc[i]);
   end;
-
 end;
 
+procedure SetList(list: TListCharacter; data: TListPers);
+var
+  dmgcells: array[0..29] of TImage;
+begin
 
+
+  //Общие данные
+  list.NameEdit.Text:=data.NameCharacter;
+  list.OwnerEdit.Text:=data.Owner;
+  list.NatureEdit.Text:=data.Nature;
+  list.ChronicleEdit.Text:=data.Chronicle;
+  list.MaskEdit.Text:=data.Mask;
+  list.ClanEdit.Text:=data.Clan;
+  list.GenEdit.Text:=IntToStr(data.Gen);
+  list.HomeEdit.Text:=data.Home;
+  list.ConceptEdit.Text:=data.Concept;
+
+  //Атрибуты
+  list.StrengthPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Strength)+'.jpg');
+  list.AgilityPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Agility)+'.jpg');
+  list.EndurancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Endurance)+'.jpg');
+  list.CharmPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Charm)+'.jpg');
+  list.ManipulationPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Manipulation)+'.jpg');
+  list.AppearancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Appearance)+'.jpg');
+  list.PerceptionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Perception)+'.jpg');
+  list.IntelligencePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Intelligence)+'.jpg');
+  list.SavvyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Savvy)+'.jpg');
+
+  //Способности.Таланты
+  list.AthleticsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Athletics)+'.jpg');
+  list.MindfulnessPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Mindfulness)+'.jpg');
+  list.EndurancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Intimidation)+'.jpg');
+  list.SleightOfHandPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.SleightOfHand)+'.jpg');
+  list.LeadershipPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Leadership)+'.jpg');
+  list.FightPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Fight)+'.jpg');
+  list.EvasionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Evasion)+'.jpg');
+  list.CunningPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Cunning)+'.jpg');
+  list.ExpressionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Expression)+'.jpg');
+  list.EmpathyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Empathy)+'.jpg');
+
+  //Способности.Навыки
+  list.DrivingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Driving)+'.jpg');
+  list.TradePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Trade)+'.jpg');
+  list.SurvivalPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Survival)+'.jpg');
+  list.PerformancePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Performance)+'.jpg');
+  list.AnimalKenPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AnimalKen)+'.jpg');
+  list.HandicraftsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Handicrafts)+'.jpg');
+  list.StealthPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Stealth)+'.jpg');
+  list.ShootingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Shooting)+'.jpg');
+  list.FencingPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Fencing)+'.jpg');
+  list.EtiquettePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Etiquette)+'.jpg');
+
+  //Способности.Познания
+  list.AcademyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Academy)+'.jpg');
+  list.LawsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Laws)+'.jpg');
+  list.WisdomPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Wisdom)+'.jpg');
+  list.LinguisticsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Linguistics)+'.jpg');
+  list.MedicinePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Medicine)+'.jpg');
+  list.TheologyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Theology)+'.jpg');
+  list.OccultismPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Occultism)+'.jpg');
+  list.PolicyPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Policy)+'.jpg');
+  list.InvestigationsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Investigations)+'.jpg');
+  list.SeneschalPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Seneschal)+'.jpg');
+
+  //Преимущества.Дополнения.Уровни
+  list.AdditionsLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[0])+'.jpg');
+  list.AdditionsLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[1])+'.jpg');
+  list.AdditionsLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[2])+'.jpg');
+  list.AdditionsLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[3])+'.jpg');
+  list.AdditionsLevel5PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[4])+'.jpg');
+  list.AdditionsLevel6PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[5])+'.jpg');
+  list.AdditionsLevel7PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[6])+'.jpg');
+  list.AdditionsLevel8PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[7])+'.jpg');
+  list.AdditionsLevel9PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.AdditionsLevel[8])+'.jpg');
+
+  //Преимущества.Дополнения.Имена
+  list.AdditionsName1.Text:=data.AdditionsName[0];
+  list.AdditionsName2.Text:=data.AdditionsName[1];
+  list.AdditionsName3.Text:=data.AdditionsName[2];
+  list.AdditionsName4.Text:=data.AdditionsName[3];
+  list.AdditionsName5.Text:=data.AdditionsName[4];
+  list.AdditionsName6.Text:=data.AdditionsName[5];
+  list.AdditionsName7.Text:=data.AdditionsName[6];
+  list.AdditionsName8.Text:=data.AdditionsName[7];
+  list.AdditionsName9.Text:=data.AdditionsName[8];
+
+  //Преимущества.Дисциплины.Уровни
+  list.DisciplineLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[0])+'.jpg');
+  list.DisciplineLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[1])+'.jpg');
+  list.DisciplineLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[2])+'.jpg');
+  list.DisciplineLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[3])+'.jpg');
+  list.DisciplineLevel5PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[4])+'.jpg');
+  list.DisciplineLevel6PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[5])+'.jpg');
+  list.DisciplineLevel7PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[6])+'.jpg');
+  list.DisciplineLevel8PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[7])+'.jpg');
+  list.DisciplineLevel9PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[8])+'.jpg');
+  list.DisciplineLevel10PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DisciplineLevel[9])+'.jpg');
+
+  //Преимущества.Дисциплины.Имена
+  list.DisciplineName1.Text:=data.DisciplineName[0];
+  list.DisciplineName2.Text:=data.DisciplineName[1];
+  list.DisciplineName3.Text:=data.DisciplineName[2];
+  list.DisciplineName4.Text:=data.DisciplineName[3];
+  list.DisciplineName5.Text:=data.DisciplineName[4];
+  list.DisciplineName6.Text:=data.DisciplineName[5];
+  list.DisciplineName7.Text:=data.DisciplineName[6];
+  list.DisciplineName8.Text:=data.DisciplineName[7];
+  list.DisciplineName9.Text:=data.DisciplineName[8];
+  list.DisciplineName10.Text:=data.DisciplineName[9];
+
+  //Преимущества.Добродетели
+  list.ConscientiousnessAndConvictionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.ConscientiousnessAndConviction)+'.jpg');
+  list.SelfmonitoringAndInstinctsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.SelfmonitoringAndInstincts)+'.jpg');
+  list.CouragePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.Courage)+'.jpg');
+
+  //Остальное. Пороки/Добродетели
+  list.VirtuesAndVices1.Text:=data.VirtuesAndVices[0];
+  list.VirtuesAndVices2.Text:=data.VirtuesAndVices[1];
+  list.VirtuesAndVices3.Text:=data.VirtuesAndVices[2];
+  list.VirtuesAndVices4.Text:=data.VirtuesAndVices[3];
+  list.VirtuesAndVices5.Text:=data.VirtuesAndVices[4];
+  list.VirtuesAndVices6.Text:=data.VirtuesAndVices[5];
+  list.VirtuesAndVices7.Text:=data.VirtuesAndVices[6];
+  list.VirtuesAndVices8.Text:=data.VirtuesAndVices[7];
+  list.VirtuesAndVices9.Text:=data.VirtuesAndVices[8];
+
+  //Остальное. Человечность/Путь
+  list.HumanityAndPathNameEdit.Text:=data.HumanityAndPathName;
+  list.HumanityAndPathLevelPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(data.HumanityAndPathLevel)+'.jpg');
+
+  //Остальное.Сила Воли
+  list.WillpowerStaticPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10points'+IntToStr(data.WillpowerStatic)+'.jpg');
+  list.WillpowerDinamicPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\10cells'+IntToStr(data.WillpowerDinamic)+'.jpg');
+
+  //Остальное.Дополнительные характеристики.Названия
+  list.DopStatName1.Text:=data.DopStatName[0];
+  list.DopStatName2.Text:=data.DopStatName[1];
+  list.DopStatName3.Text:=data.DopStatName[2];
+  list.DopStatName4.Text:=data.DopStatName[3];
+
+  //Остальное.Дополнительные характеристики.Уровни
+  list.DopStatLevel1PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[0])+'.jpg');
+  list.DopStatLevel2PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[1])+'.jpg');
+  list.DopStatLevel3PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[2])+'.jpg');
+  list.DopStatLevel4PointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.DopStatLevel[3])+'.jpg');
+
+
+  //Остальное.Здоровье
+
+
+
+  dmgcells[0] := list.dc1;
+	dmgcells[1] := list.dc2;
+	dmgcells[2] := list.dc3;
+	dmgcells[3] := list.dc4;
+	dmgcells[4] := list.dc5;
+	dmgcells[5] := list.dc6;
+	dmgcells[6] := list.dc7;
+	dmgcells[7] := list.dc8;
+	dmgcells[8] := list.dc9;
+	dmgcells[9] := list.dc10;
+	dmgcells[10] := list.dc11;
+	dmgcells[11] := list.dc12;
+	dmgcells[12] := list.dc13;
+	dmgcells[13] := list.dc14;
+	dmgcells[14] := list.dc15;
+	dmgcells[15] := list.dc16;
+	dmgcells[16] := list.dc17;
+	dmgcells[17] := list.dc18;
+	dmgcells[18] := list.dc19;
+	dmgcells[19] := list.dc20;
+	dmgcells[20] := list.dc21;
+	dmgcells[21] := list.dc22;
+	dmgcells[22] := list.dc23;
+	dmgcells[23] := list.dc24;
+	dmgcells[24] := list.dc25;
+	dmgcells[25] := list.dc26;
+	dmgcells[26] := list.dc27;
+	dmgcells[27] := list.dc28;
+	dmgcells[28] := list.dc29;
+	dmgcells[29] := list.dc30;
+
+
+  SetHealthPoint(data.CalcHP(data.Endurance), list.hp1,list.hp2,list.hp3);
+  SetDamageCells(data.XP,dmgcells);
+
+
+
+
+
+end;
 
 
 
@@ -676,266 +902,268 @@ procedure TListCharacter.StrengthMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
 
-  SetPoints(StrengthPointImg,2,X);
+  SetPoints(StrengthPointImg,listchar.Strength,X);
 
 end;
 
 procedure TListCharacter.AgilityMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AgilityPointImg,2,X);
+  SetPoints(AgilityPointImg,listchar.Agility ,X);
 end;
 
 procedure TListCharacter.EnduranceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EndurancePointImg,2,X);
+  SetPoints(EndurancePointImg, listchar.Endurance, X);
+  listchar.CalcHP(listchar.Endurance);
+  SetHealthPoint(listchar.CalcHP(listchar.Endurance), hp1,hp2,hp3);
 end;
 
 procedure TListCharacter.CharmMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CharmPointImg,2,X);
+  SetPoints(CharmPointImg,listchar.Charm,X);
 end;
 
 procedure TListCharacter.ManipulationMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ManipulationPointImg,2,X);
+  SetPoints(ManipulationPointImg,listchar.Manipulation, X);
 end;
 
 procedure TListCharacter.AppearanceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AppearancePointImg,2,X);
+  SetPoints(AppearancePointImg,listchar.Appearance,X);
 end;
 
 procedure TListCharacter.PerceptionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PerceptionPointImg,2,X);
+  SetPoints(PerceptionPointImg,listchar.Perception,X);
 end;
 
 procedure TListCharacter.IntelligenceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(IntelligencePointImg,2,X);
+  SetPoints(IntelligencePointImg,listchar.Intelligence,X);
 end;
 
 procedure TListCharacter.SavvyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SavvyPointImg,2,X);
+  SetPoints(SavvyPointImg,listchar.Savvy,X);
 end;
 
 procedure TListCharacter.AthleticsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AthleticsPointImg,2,X);
+  SetPoints(AthleticsPointImg, listchar.Athletics,X);
 end;
 
 procedure TListCharacter.MindfulnessMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(MindfulnessPointImg,2,X);
+  SetPoints(MindfulnessPointImg, listchar.Mindfulness,X);
 end;
 
 procedure TListCharacter.IntimidationMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(IntimidationPointImg,2,X);
+  SetPoints(IntimidationPointImg,listchar.Intimidation,X);
 end;
 
 procedure TListCharacter.SleightOfHandMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SleightOfHandPointImg,2,X);
+  SetPoints(SleightOfHandPointImg, listchar.SleightOfHand,X);
 end;
 
 procedure TListCharacter.LeadershipMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LeadershipPointImg,2,X);
+  SetPoints(LeadershipPointImg,listchar.Leadership,X);
 end;
 
 procedure TListCharacter.FightMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(FightPointImg,2,X);
+  SetPoints(FightPointImg,listchar.Fight,X);
 end;
 
 procedure TListCharacter.EvasionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EvasionPointImg,2,X);
+  SetPoints(EvasionPointImg,listchar.Evasion,X);
 end;
 
 procedure TListCharacter.CunningMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CunningPointImg,2,X);
+  SetPoints(CunningPointImg,listchar.Cunning,X);
 end;
 
 procedure TListCharacter.ExpressionMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ExpressionPointImg,2,X);
+  SetPoints(ExpressionPointImg,listchar.Expression,X);
 end;
 
 procedure TListCharacter.EmpathyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EmpathyPointImg,2,X);
+  SetPoints(EmpathyPointImg,listchar.Empathy,X);
 end;
 
 procedure TListCharacter.DrivingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DrivingPointImg,2,X);
+  SetPoints(DrivingPointImg,listchar.Driving,X);
 end;
 
 procedure TListCharacter.TradeMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(TradePointImg,2,X);
+  SetPoints(TradePointImg,listchar.Trade,X);
 end;
 
 procedure TListCharacter.SurvivalMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SurvivalPointImg,2,X);
+  SetPoints(SurvivalPointImg,listchar.Survival,X);
 end;
 
 procedure TListCharacter.PerformanceMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PerformancePointImg,2,X);
+  SetPoints(PerformancePointImg,listchar.Performance,X);
 end;
 
 procedure TListCharacter.AnimalKenMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AnimalKenPointImg,2,X);
+  SetPoints(AnimalKenPointImg,listchar.AnimalKen,X);
 end;
 
 procedure TListCharacter.HandicraftsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(HandicraftsPointImg,2,X);
+  SetPoints(HandicraftsPointImg,listchar.Handicrafts,X);
 end;
 
 procedure TListCharacter.StealthMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(StealthPointImg,2,X);
+  SetPoints(StealthPointImg,listchar.Stealth,X);
 end;
 
 procedure TListCharacter.ShootingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(ShootingPointImg,2,X);
+  SetPoints(ShootingPointImg,listchar.Shooting,X);
 end;
 
 procedure TListCharacter.FencingMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(FencingPointImg,2,X);
+  SetPoints(FencingPointImg,listchar.Fencing,X);
 end;
 
 procedure TListCharacter.EtiquetteMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(EtiquettePointImg,2,X);
+  SetPoints(EtiquettePointImg,listchar.Etiquette,X);
 end;
 
 procedure TListCharacter.AcademyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AcademyPointImg,2,X);
+  SetPoints(AcademyPointImg,listchar.Academy,X);
 end;
 
 procedure TListCharacter.LawsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LawsPointImg,2,X);
+  SetPoints(LawsPointImg,listchar.Laws,X);
 end;
 
 procedure TListCharacter.WisdomMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(WisdomPointImg,8,X);
+  SetPoints(WisdomPointImg,listchar.Wisdom,X);
 end;
 
 procedure TListCharacter.LinguisticsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(LinguisticsPointImg,2,X);
+  SetPoints(LinguisticsPointImg,listchar.Linguistics,X);
 end;
 
 procedure TListCharacter.MedicineMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(MedicinePointImg,2,X);
+  SetPoints(MedicinePointImg,listchar.Medicine,X);
 end;
 
 procedure TListCharacter.TheologyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(TheologyPointImg,2,X);
+  SetPoints(TheologyPointImg,listchar.Theology,X);
 end;
 
 procedure TListCharacter.OccultismMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(OccultismPointImg,2,X);
+  SetPoints(OccultismPointImg,listchar.Occultism,X);
 end;
 
 procedure TListCharacter.PolicyMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(PolicyPointImg,2,X);
+  SetPoints(PolicyPointImg,listchar.Policy,X);
 end;
 
 procedure TListCharacter.InvestigationsMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(InvestigationsPointImg,2,X);
+  SetPoints(InvestigationsPointImg,listchar.Investigations,X);
 end;
 
 procedure TListCharacter.SeneschalMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(SeneschalPointImg,2,X);
+  SetPoints(SeneschalPointImg,listchar.Seneschal,X);
 end;
 
 procedure TListCharacter.HumanityAndPathLevelMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(HumanityAndPathLevelPointImg,2,X);
+  SetPoints3(HumanityAndPathLevelPointImg,listchar.HumanityAndPathLevel,X);
 end;
 
 procedure TListCharacter.DopStatLevel1MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel1PointImg,2,X);
+  SetPoints(DopStatLevel1PointImg,listchar.DopStatLevel[0],X);
 end;
 
 procedure TListCharacter.DopStatLevel2MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel2PointImg,2,X);
+  SetPoints(DopStatLevel2PointImg,listchar.DopStatLevel[1],X);
 end;
 
 procedure TListCharacter.DopStatLevel3MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel3PointImg,2,X);
+  SetPoints(DopStatLevel3PointImg,listchar.DopStatLevel[2],X);
 end;
 
 procedure TListCharacter.DopStatLevel4MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DopStatLevel4PointImg,2,X);
+  SetPoints(DopStatLevel4PointImg,listchar.DopStatLevel[3],X);
 end;
 
 procedure TListCharacter.WillpowerStaticMPClick(Sender: TObject);
@@ -946,153 +1174,154 @@ end;
 procedure TListCharacter.WillpowerDinamicMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints2(WillpowerDinamicPointImg,2,X);
+
+  SetPoints2(WillpowerDinamicPointImg, listchar.WillpowerDinamic, X);
 end;
 
 procedure TListCharacter.ConscientiousnessAndConvictionMPMouseDown(
   Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
   Y: Integer);
 begin
-  SetPoints(ConscientiousnessAndConvictionPointImg,2,X);
+  SetPoints(ConscientiousnessAndConvictionPointImg,listchar.ConscientiousnessAndConviction,X);
 end;
 
 procedure TListCharacter.SelfmonitoringAndInstinctsMPMouseDown(
   Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
   Y: Integer);
 begin
-  SetPoints(SelfmonitoringAndInstinctsPointImg,2,X);
+  SetPoints(SelfmonitoringAndInstinctsPointImg,listchar.SelfmonitoringAndInstincts,X);
 end;
 
 procedure TListCharacter.CourageMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(CouragePointImg,2,X);
+  SetPoints(CouragePointImg,listchar.Courage,X);
 end;
 
 procedure TListCharacter.WillpowerStaticMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(WillpowerStaticPointImg,2,X);
+  SetPoints3(WillpowerStaticPointImg,listchar.WillpowerStatic,X);
 end;
 
 procedure TListCharacter.AdditionsLevel1MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel1PointImg,2,X);
+  SetPoints(AdditionsLevel1PointImg,listchar.AdditionsLevel[0],X);
 end;
 
 procedure TListCharacter.AdditionsLevel2MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel2PointImg,2,X);
+  SetPoints(AdditionsLevel2PointImg,listchar.AdditionsLevel[1],X);
 end;
 
 procedure TListCharacter.AdditionsLevel3MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel3PointImg,2,X);
+  SetPoints(AdditionsLevel3PointImg,listchar.AdditionsLevel[2],X);
 end;
 
 procedure TListCharacter.AdditionsLevel4MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel4PointImg,2,X);
+  SetPoints(AdditionsLevel4PointImg,listchar.AdditionsLevel[3],X);
 end;
 
 procedure TListCharacter.AdditionsLevel5MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel5PointImg,2,X);
+  SetPoints(AdditionsLevel5PointImg,listchar.AdditionsLevel[4],X);
 end;
 
 procedure TListCharacter.AdditionsLevel6MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel6PointImg,2,X);
+  SetPoints(AdditionsLevel6PointImg,listchar.AdditionsLevel[5],X);
 end;
 
 procedure TListCharacter.AdditionsLevel7MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel7PointImg,2,X);
+  SetPoints(AdditionsLevel7PointImg,listchar.AdditionsLevel[6],X);
 end;
 
 procedure TListCharacter.AdditionsLevel8MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel8PointImg,2,X);
+  SetPoints(AdditionsLevel8PointImg,listchar.AdditionsLevel[7],X);
 end;
 
 procedure TListCharacter.AdditionsLevel9MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(AdditionsLevel9PointImg,2,X);
+  SetPoints(AdditionsLevel9PointImg,listchar.AdditionsLevel[8],X);
 end;
 
 procedure TListCharacter.DisciplineLevel1MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel1PointImg,2,X);
+  SetPoints(DisciplineLevel1PointImg,listchar.DisciplineLevel[0],X);
 end;
 
 procedure TListCharacter.DisciplineLevel2MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel2PointImg,2,X);
+  SetPoints(DisciplineLevel2PointImg,listchar.DisciplineLevel[1],X);
 end;
 
 procedure TListCharacter.DisciplineLevel3MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel3PointImg,2,X);
+  SetPoints(DisciplineLevel3PointImg,listchar.DisciplineLevel[2],X);
 end;
 
 procedure TListCharacter.DisciplineLevel4MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel4PointImg,2,X);
+  SetPoints(DisciplineLevel4PointImg,listchar.DisciplineLevel[3],X);
 end;
 
 procedure TListCharacter.DisciplineLevel5MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel5PointImg,2,X);
+  SetPoints(DisciplineLevel5PointImg,listchar.DisciplineLevel[4],X);
 end;
 
 procedure TListCharacter.DisciplineLevel6MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel6PointImg,2,X);
+  SetPoints(DisciplineLevel6PointImg,listchar.DisciplineLevel[5],X);
 end;
 
 procedure TListCharacter.DisciplineLevel7MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel7PointImg,2,X);
+  SetPoints(DisciplineLevel7PointImg,listchar.DisciplineLevel[6],X);
 end;
 
 procedure TListCharacter.DisciplineLevel8MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel8PointImg,2,X);
+  SetPoints(DisciplineLevel8PointImg,listchar.DisciplineLevel[7],X);
 end;
 
 procedure TListCharacter.DisciplineLevel9MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel9PointImg,2,X);
+  SetPoints(DisciplineLevel9PointImg,listchar.DisciplineLevel[8],X);
 end;
 
 procedure TListCharacter.DisciplineLevel10MPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetPoints(DisciplineLevel10PointImg,2,X);
+  SetPoints(DisciplineLevel10PointImg,listchar.DisciplineLevel[9],X);
 end;
 
 procedure TListCharacter.BloodPoolMPMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetBloodPool(1, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
+  SetBloodPool(listchar.BloodPool, X, BloodPool1, BloodPool2, BloodPool3, BloodPool4, BloodPool5);
 end;
 
 
@@ -1100,181 +1329,181 @@ end;
 procedure TListCharacter.dc1MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc1);
+  SetDamageCell(listchar.XP[0], dc1);
 end;
 
 procedure TListCharacter.dc2MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc2);
+  SetDamageCell(listchar.XP[1], dc2);
 end;
 
 procedure TListCharacter.dc3MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc3);
+  SetDamageCell(listchar.XP[2], dc3);
 end;
 
 procedure TListCharacter.dc4MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc4);
+  SetDamageCell(listchar.XP[3], dc4);
 end;
 
 procedure TListCharacter.dc5MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc5);
+  SetDamageCell(listchar.XP[4], dc5);
 end;
 
 procedure TListCharacter.dc6MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc6);
+  SetDamageCell(listchar.XP[5], dc6);
 end;
 
 procedure TListCharacter.dc7MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc7);
+  SetDamageCell(listchar.XP[6], dc7);
 end;
 
 procedure TListCharacter.dc8MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc8);
+  SetDamageCell(listchar.XP[7], dc8);
 end;
 
 procedure TListCharacter.dc9MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc9);
+  SetDamageCell(listchar.XP[8], dc9);
 end;
 
 procedure TListCharacter.dc10MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc10);
+  SetDamageCell(listchar.XP[9], dc10);
 end;
 
 procedure TListCharacter.dc11MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc11);
+  SetDamageCell(listchar.XP[10], dc11);
 end;
 
 procedure TListCharacter.dc12MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc12);
+  SetDamageCell(listchar.XP[11], dc12);
 end;
 
 procedure TListCharacter.dc13MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc13);
+  SetDamageCell(listchar.XP[12], dc13);
 end;
 
 procedure TListCharacter.dc14MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc14);
+  SetDamageCell(listchar.XP[13], dc14);
 end;
 
 procedure TListCharacter.dc15MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc15);
+  SetDamageCell(listchar.XP[14], dc15);
 end;
 
 procedure TListCharacter.dc16MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc16);
+  SetDamageCell(listchar.XP[15], dc16);
 end;
 
 procedure TListCharacter.dc17MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc17);
+  SetDamageCell(listchar.XP[16], dc17);
 end;
 
 procedure TListCharacter.dc18MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc18);
+  SetDamageCell(listchar.XP[17], dc18);
 end;
 
 procedure TListCharacter.dc19MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc19);
+  SetDamageCell(listchar.XP[18], dc19);
 end;
 
 procedure TListCharacter.dc20MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc20);
+  SetDamageCell(listchar.XP[19], dc20);
 end;
 
 procedure TListCharacter.dc21MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc21);
+  SetDamageCell(listchar.XP[20], dc21);
 end;
 
 procedure TListCharacter.dc22MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc22);
+  SetDamageCell(listchar.XP[21], dc22);
 end;
 
 procedure TListCharacter.dc23MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc23);
+  SetDamageCell(listchar.XP[22], dc23);
 end;
 
 procedure TListCharacter.dc24MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc24);
+  SetDamageCell(listchar.XP[23], dc24);
 end;
 
 procedure TListCharacter.dc25MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc25);
+  SetDamageCell(listchar.XP[24], dc25);
 end;
 
 procedure TListCharacter.dc26MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc26);
+  SetDamageCell(listchar.XP[25], dc26);
 end;
 
 procedure TListCharacter.dc27MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc27);
+  SetDamageCell(listchar.XP[26], dc27);
 end;
 
 procedure TListCharacter.dc28MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc28);
+  SetDamageCell(listchar.XP[27], dc28);
 end;
 
 procedure TListCharacter.dc29MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc29);
+  SetDamageCell(listchar.XP[28], dc29);
 end;
 
 procedure TListCharacter.dc30MouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  SetDamageCell(3, dc30);
+  SetDamageCell(listchar.XP[29], dc30);
 end;
 
 
@@ -1285,76 +1514,14 @@ end;
  //
 
 procedure TListCharacter.FormCreate(Sender: TObject);
-var
- xp: array[0..29] of Integer;
- dmgcells: array[0..29] of TImage;
 begin
 //
-  SetHealthPoit(27, hp1,hp2,hp3);
 
-	xp[0] := 3;
-	xp[1] := 3;
-	xp[2] := 3;
-	xp[3] := 3;
-	xp[4] := 2;
-	xp[5] := 2;
-	xp[6] := 2;
-	xp[7] := 2;
-	xp[8] := 1;
-	xp[9] := 1;
-	xp[10] := 1;
-	xp[11] := 0;
-	xp[12] := 0;
-	xp[13] := 0;
-	xp[14] := 0;
-	xp[15] := 0;
-	xp[16] := 0;
-	xp[17] := 0;
-	xp[18] := 0;
-	xp[19] := 0;
-	xp[20] := 0;
-	xp[21] := 0;
-	xp[22] := 0;
-	xp[23] := 0;
-	xp[24] := 0;
-	xp[25] := 0;
-	xp[26] := 0;
-	xp[27] := 0;
-	xp[28] := 0;
-	xp[29] := 0;
+  listchar := TListPers.Create;
 
-  dmgcells[0] := dc1;
-	dmgcells[1] := dc2;
-	dmgcells[2] := dc3;
-	dmgcells[3] := dc4;
-	dmgcells[4] := dc5;
-	dmgcells[5] := dc6;
-	dmgcells[6] := dc7;
-	dmgcells[7] := dc8;
-	dmgcells[8] := dc9;
-	dmgcells[9] := dc10;
-	dmgcells[10] := dc11;
-	dmgcells[11] := dc12;
-	dmgcells[12] := dc13;
-	dmgcells[13] := dc14;
-	dmgcells[14] := dc15;
-	dmgcells[15] := dc16;
-	dmgcells[16] := dc17;
-	dmgcells[17] := dc18;
-	dmgcells[18] := dc19;
-	dmgcells[19] := dc20;
-	dmgcells[20] := dc21;
-	dmgcells[21] := dc22;
-	dmgcells[22] := dc23;
-	dmgcells[23] := dc24;
-	dmgcells[24] := dc25;
-	dmgcells[25] := dc26;
-	dmgcells[26] := dc27;
-	dmgcells[27] := dc28;
-	dmgcells[28] := dc29;
-	dmgcells[29] := dc30;
+  SetList(ListCharacter, listchar);
 
-  SetDamageCells(xp,dmgcells);
+
 
 
 

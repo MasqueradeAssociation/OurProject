@@ -1,13 +1,8 @@
 object MainForm: TMainForm
-<<<<<<< HEAD
-  Left = 338
-  Top = 339
-=======
-  Left = 302
-  Top = 203
->>>>>>> 5e2466d9c29f5d59d0153841314091b8deb0531c
-  Width = 1305
-  Height = 675
+  Left = 856
+  Top = 548
+  Width = 368
+  Height = 272
   Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,20 +14,20 @@ object MainForm: TMainForm
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
-    Left = 1160
-    Top = 64
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
+    Left = 40
+    Top = 16
+    Width = 273
+    Height = 89
+    Caption = #1051#1080#1089#1090' '#1087#1077#1088#1089#1086#1085#1072#1078#1072
     TabOrder = 0
     OnClick = Button1Click
   end
   object Dice: TButton
-    Left = 1160
+    Left = 40
     Top = 128
-    Width = 75
-    Height = 25
-    Caption = 'Dice'
+    Width = 273
+    Height = 89
+    Caption = #1041#1088#1086#1089#1086#1082' '#1082#1091#1073#1080#1082#1086#1074'(d10)'
     TabOrder = 1
     OnClick = DiceClick
   end
