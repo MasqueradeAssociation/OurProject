@@ -271,82 +271,82 @@ begin
   AssignFile(f,NameCh);//'Character'+NameCh+
   Reset(f);
 
-  Read(f,Gen);
-  Read(f,Strength);
-  Read(f,Agility);
-  Read(f,Endurance);
-  Read(f,Charm);
-  Read(f,Manipulation);
-  Read(f,Appearance);
-  Read(f,Perception);
-  Read(f,Intelligence);
-  Read(f,Savvy);
-  Read(f,Athletics);
-  Read(f,Mindfulness);
-  Read(f,Intimidation);
-  Read(f,SleightOfHand);
-  Read(f,Leadership);
-  Read(f,Fight);
-  Read(f,Evasion);
-  Read(f,Cunning);
-  Read(f,Expression);
-  Read(f,Empathy);
-  Read(f,Driving);
-  Read(f,Trade);
-  Read(f,Survival);
-  Read(f,Performance);
-  Read(f,AnimalKen);
-  Read(f,Handicrafts);
-  Read(f,Stealth);
-  Read(f,Shooting);
-  Read(f,Fencing);
-  Read(f,Etiquette);
-  Read(f,Academy);
-  Read(f,Laws);
-  Read(f,Wisdom);
-  Read(f,Linguistics);
-  Read(f,Medicine);
-  Read(f,Theology);
-  Read(f,Occultism);
-  Read(f,Policy);
-  Read(f,Investigations);
-  Read(f,Seneschal);
-  Read(f,ConscientiousnessAndConviction);
-  Read(f,SelfmonitoringAndInstincts);
-  Read(f,Courage);
+  Readln(f,Gen);
+  Readln(f,Strength);
+  Readln(f,Agility);
+  Readln(f,Endurance);
+  Readln(f,Charm);
+  Readln(f,Manipulation);
+  Readln(f,Appearance);
+  Readln(f,Perception);
+  Readln(f,Intelligence);
+  Readln(f,Savvy);
+  Readln(f,Athletics);
+  Readln(f,Mindfulness);
+  Readln(f,Intimidation);
+  Readln(f,SleightOfHand);
+  Readln(f,Leadership);
+  Readln(f,Fight);
+  Readln(f,Evasion);
+  Readln(f,Cunning);
+  Readln(f,Expression);
+  Readln(f,Empathy);
+  Readln(f,Driving);
+  Readln(f,Trade);
+  Readln(f,Survival);
+  Readln(f,Performance);
+  Readln(f,AnimalKen);
+  Readln(f,Handicrafts);
+  Readln(f,Stealth);
+  Readln(f,Shooting);
+  Readln(f,Fencing);
+  Readln(f,Etiquette);
+  Readln(f,Academy);
+  Readln(f,Laws);
+  Readln(f,Wisdom);
+  Readln(f,Linguistics);
+  Readln(f,Medicine);
+  Readln(f,Theology);
+  Readln(f,Occultism);
+  Readln(f,Policy);
+  Readln(f,Investigations);
+  Readln(f,Seneschal);
+  Readln(f,ConscientiousnessAndConviction);
+  Readln(f,SelfmonitoringAndInstincts);
+  Readln(f,Courage);
 
-  Read(f,HumanityAndPathLevel);
-  Read(f,WillpowerStatic);
-  Read(f,WillpowerDinamic);
-  Read(f,BloodPool);
-
-  for i:=0 to 20 do
-    Read(f,DisciplineLevel[i]);
+  Readln(f,HumanityAndPathLevel);
+  Readln(f,WillpowerStatic);
+  Readln(f,WillpowerDinamic);
+  Readln(f,BloodPool);
 
   for i:=0 to 20 do
-    Read(f,AdditionsLevel[i]);
+    Readln(f,DisciplineLevel[i]);
 
   for i:=0 to 20 do
-    Read(f,DopStatLevel[i]);
+    Readln(f,AdditionsLevel[i]);
+
+  for i:=0 to 20 do
+    Readln(f,DopStatLevel[i]);
   for i:=0 to 30 do
-    Read(f,XP[i]);
-  Read(f,NameCharacter);
-  Read(f,Owner);
-  Read(f,Nature);
-  Read(f,Mask);
-  Read(f,Clan);
-  Read(f,Chronicle);
-  Read(f,Concept);
-  Read(f,Home);
-  Read(f,HumanityAndPathName);
+    Readln(f,XP[i]);
+  Readln(f,NameCharacter);
+  Readln(f,Owner);
+  Readln(f,Nature);
+  Readln(f,Mask);
+  Readln(f,Clan);
+  Readln(f,Chronicle);
+  Readln(f,Concept);
+  Readln(f,Home);
+  Readln(f,HumanityAndPathName);
   for i:=0 to 20 do
-    Read(f,DisciplineName[i]);
+    Readln(f,DisciplineName[i]);
   for i:=0 to 20 do
-    Read(f,AdditionsName[i]);
+    Readln(f,AdditionsName[i]);
   for i:=0 to 20 do
-    Read(f,VirtuesAndVices[i]);
+    Readln(f,VirtuesAndVices[i]);
   for i:=0 to 20 do
-    Read(f,DopStatName[i]);
+    Readln(f,DopStatName[i]);
   CloseFile(f);
 end;
 
