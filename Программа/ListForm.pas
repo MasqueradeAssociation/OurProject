@@ -524,6 +524,50 @@ type
     procedure SavePersClick(Sender: TObject);
     procedure LoadPersClick(Sender: TObject);
     procedure NameEditExit(Sender: TObject);
+    procedure OwnerEditExit(Sender: TObject);
+    procedure ChronicleEditExit(Sender: TObject);
+    procedure NatureEditExit(Sender: TObject);
+    procedure MaskEditExit(Sender: TObject);
+    procedure ClanEditExit(Sender: TObject);
+    procedure GenEditExit(Sender: TObject);
+    procedure HomeEditExit(Sender: TObject);
+    procedure ConceptEditExit(Sender: TObject);
+    procedure AdditionsName1Exit(Sender: TObject);
+    procedure AdditionsName2Exit(Sender: TObject);
+    procedure AdditionsName3Exit(Sender: TObject);
+    procedure AdditionsName4Exit(Sender: TObject);
+    procedure AdditionsName5Exit(Sender: TObject);
+    procedure AdditionsName6Exit(Sender: TObject);
+    procedure AdditionsName7Exit(Sender: TObject);
+    procedure AdditionsName8Exit(Sender: TObject);
+    procedure AdditionsName9Exit(Sender: TObject);
+    procedure DisciplineName1Exit(Sender: TObject);
+    procedure DisciplineName2Exit(Sender: TObject);
+    procedure DisciplineName3Exit(Sender: TObject);
+    procedure DisciplineName4Exit(Sender: TObject);
+    procedure DisciplineName5Exit(Sender: TObject);
+    procedure DisciplineName6Exit(Sender: TObject);
+    procedure DisciplineName7Exit(Sender: TObject);
+    procedure DisciplineName8Exit(Sender: TObject);
+    procedure DisciplineName9Exit(Sender: TObject);
+    procedure DisciplineName10Exit(Sender: TObject);
+    procedure VirtuesAndVices1Exit(Sender: TObject);
+    procedure VirtuesAndVices2Exit(Sender: TObject);
+    procedure VirtuesAndVices3Exit(Sender: TObject);
+    procedure VirtuesAndVices4Exit(Sender: TObject);
+    procedure VirtuesAndVices5Exit(Sender: TObject);
+    procedure VirtuesAndVices6Exit(Sender: TObject);
+    procedure VirtuesAndVices7Exit(Sender: TObject);
+    procedure VirtuesAndVices8Exit(Sender: TObject);
+    procedure VirtuesAndVices9Exit(Sender: TObject);
+    procedure VirtuesAndVices10Exit(Sender: TObject);
+    procedure VirtuesAndVices11Exit(Sender: TObject);
+    procedure VirtuesAndVices12Exit(Sender: TObject);
+    procedure HumanityAndPathNameEditExit(Sender: TObject);
+    procedure DopStatName1Exit(Sender: TObject);
+    procedure DopStatName2Exit(Sender: TObject);
+    procedure DopStatName3Exit(Sender: TObject);
+    procedure DopStatName4Exit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -570,6 +614,11 @@ end;
 procedure GetEditText(edit: TEdit; var param: String);
 begin
   param:=edit.Text;
+end;
+
+procedure GetEditText2(edit: TEdit; var param: Integer);
+begin
+  param:=StrToInt(edit.Text);
 end;
 
 procedure SetPoints2(img: TImage; var param, mode: Integer);
@@ -825,9 +874,9 @@ begin
   list.DisciplineName10.Text:=data.DisciplineName[9];
 
   //Преимущества.Добродетели
-  list.ConscientiousnessAndConvictionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.ConscientiousnessAndConviction)+'.jpg');
-  list.SelfmonitoringAndInstinctsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.SelfmonitoringAndInstincts)+'.jpg');
-  list.CouragePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\5points'+IntToStr(data.Courage)+'.jpg');
+  list.ConscientiousnessAndConvictionPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.ConscientiousnessAndConviction)+'.jpg');
+  list.SelfmonitoringAndInstinctsPointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.SelfmonitoringAndInstincts)+'.jpg');
+  list.CouragePointImg.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\res\8points'+IntToStr(data.Courage)+'.jpg');
 
   //Остальное. Пороки/Добродетели
   list.VirtuesAndVices1.Text:=data.VirtuesAndVices[0];
@@ -1551,6 +1600,226 @@ end;
 procedure TListCharacter.NameEditExit(Sender: TObject);
 begin
   GetEditText(NameEdit, listchar.NameCharacter);
+end;
+
+procedure TListCharacter.OwnerEditExit(Sender: TObject);
+begin
+  GetEditText(OwnerEdit, listchar.Owner);
+end;
+
+procedure TListCharacter.ChronicleEditExit(Sender: TObject);
+begin
+  GetEditText(ChronicleEdit, listchar.Chronicle);
+end;
+
+procedure TListCharacter.NatureEditExit(Sender: TObject);
+begin
+  GetEditText(NatureEdit, listchar.Nature);
+end;
+
+procedure TListCharacter.MaskEditExit(Sender: TObject);
+begin
+  GetEditText(MaskEdit, listchar.Mask);
+end;
+
+procedure TListCharacter.ClanEditExit(Sender: TObject);
+begin
+  GetEditText(ClanEdit, listchar.Clan);
+end;
+
+procedure TListCharacter.GenEditExit(Sender: TObject);
+begin
+  GetEditText2(GenEdit, listchar.Gen);
+end;
+
+procedure TListCharacter.HomeEditExit(Sender: TObject);
+begin
+  GetEditText(HomeEdit, listchar.Home);
+end;
+
+procedure TListCharacter.ConceptEditExit(Sender: TObject);
+begin
+  GetEditText(ConceptEdit, listchar.Concept);
+end;
+
+procedure TListCharacter.AdditionsName1Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName1, listchar.AdditionsName[0]);
+end;
+
+procedure TListCharacter.AdditionsName2Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName2, listchar.AdditionsName[1]);
+end;
+
+procedure TListCharacter.AdditionsName3Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName3, listchar.AdditionsName[2]);
+end;
+
+procedure TListCharacter.AdditionsName4Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName4, listchar.AdditionsName[3]);
+end;
+
+procedure TListCharacter.AdditionsName5Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName5, listchar.AdditionsName[4]);
+end;
+
+procedure TListCharacter.AdditionsName6Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName6, listchar.AdditionsName[5]);
+end;
+
+procedure TListCharacter.AdditionsName7Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName7, listchar.AdditionsName[6]);
+end;
+
+procedure TListCharacter.AdditionsName8Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName8, listchar.AdditionsName[7]);
+end;
+
+procedure TListCharacter.AdditionsName9Exit(Sender: TObject);
+begin
+  GetEditText(AdditionsName9, listchar.AdditionsName[8]);
+end;
+
+procedure TListCharacter.DisciplineName1Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName1, listchar.DisciplineName[0]);
+end;
+
+procedure TListCharacter.DisciplineName2Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName2, listchar.DisciplineName[1]);
+end;
+
+procedure TListCharacter.DisciplineName3Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName3, listchar.DisciplineName[2]);
+end;
+
+procedure TListCharacter.DisciplineName4Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName4, listchar.DisciplineName[3]);
+end;
+
+procedure TListCharacter.DisciplineName5Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName5, listchar.DisciplineName[4]);
+end;
+
+procedure TListCharacter.DisciplineName6Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName6, listchar.DisciplineName[5]);
+end;
+
+procedure TListCharacter.DisciplineName7Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName7, listchar.DisciplineName[6]);
+end;
+
+procedure TListCharacter.DisciplineName8Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName8, listchar.DisciplineName[7]);
+end;
+
+procedure TListCharacter.DisciplineName9Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName9, listchar.DisciplineName[8]);
+end;
+
+procedure TListCharacter.DisciplineName10Exit(Sender: TObject);
+begin
+  GetEditText(DisciplineName10, listchar.DisciplineName[9]);
+end;
+
+procedure TListCharacter.VirtuesAndVices1Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices1, listchar.VirtuesAndVices[0]);
+end;
+
+procedure TListCharacter.VirtuesAndVices2Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices2, listchar.VirtuesAndVices[1]);
+end;
+
+procedure TListCharacter.VirtuesAndVices3Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices3, listchar.VirtuesAndVices[2]);
+end;
+
+procedure TListCharacter.VirtuesAndVices4Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices4, listchar.VirtuesAndVices[3]);
+end;
+
+procedure TListCharacter.VirtuesAndVices5Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices5, listchar.VirtuesAndVices[4]);
+end;
+
+procedure TListCharacter.VirtuesAndVices6Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices6, listchar.VirtuesAndVices[5]);
+end;
+
+procedure TListCharacter.VirtuesAndVices7Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices7, listchar.VirtuesAndVices[6]);
+end;
+
+procedure TListCharacter.VirtuesAndVices8Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices8, listchar.VirtuesAndVices[7]);
+end;
+
+procedure TListCharacter.VirtuesAndVices9Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices9, listchar.VirtuesAndVices[8]);
+end;
+
+procedure TListCharacter.VirtuesAndVices10Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices10, listchar.VirtuesAndVices[9]);
+end;
+
+procedure TListCharacter.VirtuesAndVices11Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices11, listchar.VirtuesAndVices[10]);
+end;
+
+procedure TListCharacter.VirtuesAndVices12Exit(Sender: TObject);
+begin
+  GetEditText(VirtuesAndVices12,listchar.VirtuesAndVices[1]);
+end;
+
+procedure TListCharacter.HumanityAndPathNameEditExit(Sender: TObject);
+begin
+  GetEditText(HumanityAndPathNameEdit, listchar.HumanityAndPathName);
+end;
+
+procedure TListCharacter.DopStatName1Exit(Sender: TObject);
+begin
+  GetEditText(DopStatName1, listchar.DopStatName[0]);
+end;
+
+procedure TListCharacter.DopStatName2Exit(Sender: TObject);
+begin
+  GetEditText(DopStatName2, listchar.DopStatName[1]);
+end;
+
+procedure TListCharacter.DopStatName3Exit(Sender: TObject);
+begin
+  GetEditText(DopStatName3, listchar.DopStatName[2]);
+end;
+
+procedure TListCharacter.DopStatName4Exit(Sender: TObject);
+begin
+  GetEditText(DopStatName4, listchar.DopStatName[3]);
 end;
 
 end.
